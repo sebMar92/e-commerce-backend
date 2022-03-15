@@ -1,10 +1,8 @@
-import { Router } from "express";
+const router = require("express").Router();
 
 // import ruta from "./ruta"
-
-const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/ruta', ruta);
 
-export default router;
+module.exports = router;
