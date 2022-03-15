@@ -1,7 +1,7 @@
 require("dotenv").config();
-import { Sequelize } from "sequelize";
-import fs from "fs";
-import path from "path";
+const { Sequelize } = require("sequelize");
+const fs = require("fs");
+const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 let sequelize =
@@ -28,7 +28,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/products`,
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`,
         {
           logging: false, // set to console.log to see the raw SQL queries
           native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -56,15 +56,34 @@ let capsEntries = entries.map((entry) => [
   entry[0][0].toUpperCase() + entry[0].slice(1),
   entry[1],
 ]);
-sequelize.models = Object.fromEntries(capsEntries);
 
+sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { NombreDeModelo } = sequelize.models;
+const { User, Category, Product, Image, Comment, Sale, Newsletter } =
+  sequelize.models;
 
-// Aca vendrian las relaciones
+User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });
+Product.belongsToMany(User, { through: "Wishlist" });
 
-export default {
+User.belongsToMany(Product, { through: "ShoppingCart", as: "shoppingProduct" });
+Product.belongsToMany(User, { through: "ShoppingCart" });
+
+Category.belongsToMany(Product, { through: "Category_Product" });
+Product.belongsToMany(Category, { through: "Category_Product" });
+
+Sale.belongsToMany(Product, { through: "Sale_Product" });
+Product.belongsToMany(Sale, { through: "Sale_Product" });
+
+Sale.belongsToMany(Category, { through: "Sale_Category" });
+Category.belongsToMany(Sale, { through: "Sale_Category" });
+
+User.hasMany(Comment);
+
+Product.hasMany(Comment);
+Product.hasMany(Image);
+
+module.exports = {
   ...sequelize.models,
   conn: sequelize,
 };

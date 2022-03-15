@@ -1,6 +1,6 @@
-import express from "express";
-import routes from "./routes/index.js";
-import "./database.js";
+const express = require("express");
+const routes = require("./routes/index.js");
+require("./database.js");
 
 const app = express();
 app.name = "API";
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 //routes
 app.use("/", routes);
 // Error catching endware.
-server.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
   // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   const message = err.message || err;
@@ -33,4 +33,4 @@ server.use((err, req, res, next) => {
   res.status(status).send(message);
 });
 
-export default app;
+module.exports = app;
