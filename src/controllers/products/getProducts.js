@@ -1,9 +1,14 @@
 const { Product, Image, Category } = require("../../database.js");
 
-const getProducts = async (whereStatement, categoryWhereStatement) => {
+const getProducts = async (
+  orderDisposition,
+  whereStatement,
+  categoryWhereStatement
+) => {
   try {
     const products = await Product.findAll({
       ...whereStatement,
+      ...orderDisposition,
       include: [
         {
           model: Image,
