@@ -9,7 +9,7 @@ const filterCompose = async (
   freeShipping, //freeShipping = true/false
   categoryId //categoryId = 6
 ) => {
-  var whereStatement = { where: {} };
+  var whereStatement = { where: { stock: { [Op.gt]: 0 } } }; // default - only show those with at least 1 available stock
   if (search) {
     whereStatement.where.name = { [Op.iLike]: `%${search}%` };
   }
