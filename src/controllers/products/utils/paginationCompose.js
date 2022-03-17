@@ -4,10 +4,10 @@ const Op = Sequelize.Op;
 
 const paginationCompose = async (page, itemsPerPage) => {
   if (!itemsPerPage) {
-    itemsPerPage = 16; //default
+    itemsPerPage = 16; //default 16
   }
   if (!page) {
-    page = 1;
+    page = 1; //default 1
   }
   var orderStatement = {
     offset: (page - 1) * itemsPerPage,

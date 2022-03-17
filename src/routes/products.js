@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const getProducts = require("../controllers/products/getProducts.js");
+const countPages = require("../controllers/products/utils/countPages.js");
 const filterCompose = require("../controllers/products/utils/filterCompose.js");
 const orderCompose = require("../controllers/products/utils/orderCompose.js");
 const paginationCompose = require("../controllers/products/utils/paginationCompose.js");
@@ -29,8 +30,14 @@ router.get("", async function (req, res) {
     paginationSettings,
     ...filterConditions
   );
-
-  return res.status(200).send(products);
+  const pages = await countPages(limit);
+  return res
+    .status(200)
+    .send({
+      products: products,
+      pages: pages,
+      page: offset ? Number(offset) : 1,
+    });
 });
 
 module.exports = router;
