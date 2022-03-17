@@ -2,6 +2,7 @@ const { Product, Image, Category } = require("../../database.js");
 
 const getProducts = async (
   orderDisposition,
+  paginationSettings,
   whereStatement,
   categoryWhereStatement
 ) => {
@@ -9,6 +10,7 @@ const getProducts = async (
     const products = await Product.findAll({
       ...whereStatement,
       ...orderDisposition,
+      ...paginationSettings,
       include: [
         {
           model: Image,
