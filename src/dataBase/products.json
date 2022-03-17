@@ -1,5 +1,6 @@
 [
   {
+    "title": "Microsoft Authorized Refurbished- HP",
     "name": "Microsoft Authorized Refurbished- HP Elite Desktop PC Computer Intel Core i5 3.1-GHz, 8 gb Ram, 1 TB Hard Drive, DVDRW, 19 Inch LCD Monitor, Keyboard, Mouse, USB WiFi, Windows 10 (Renewed) ",
     "price": 212.69,
     "shippingCost": 67.32,
@@ -13,6 +14,7 @@
     "categories": ["Computers", "Pc Desktop"]
   },
   {
+    "title": "Acer Aspire TC-1660-UA92 Desktop",
     "name": "Acer Aspire TC-1660-UA92 Desktop | 10th Gen Intel Core i5-10400 6-Core Processor | 12GB 2666MHz DDR4 | 512GB NVMe M.2 SSD | 8X DVD | Intel Wireless Wi-Fi 6 | Bluetooth 5.2 | Windows 10 Home ",
     "price": 549.0,
     "shippingCost": 49.84,
@@ -26,6 +28,7 @@
     "categories": ["Computers", "Pc Desktop"]
   },
   {
+    "title": "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer",
     "name": "Lenovo IdeaCentre AIO 3 AMD All-in-One Computer, 24' FHD Display, Ryzen 5 5500U, 16GB RAM, 512GB SSD, DVD RW Drive, Windows 11 ",
     "price": 749.99,
     "shippingCost": 39.25,
@@ -40,6 +43,7 @@
     "categories": ["Computers", "Pc Desktop"]
   },
   {
+    "title": "Gaming PC Desktop Computer by Alarco",
     "name": "Gaming PC Desktop Computer by Alarco Intel i5 3.10GHz,8GB Ram,1TB Hard Drive,Windows 10 pro,WiFi Ready,Video Card Nvidia GTX 650 1GB, 3 RGB Fans with Remote ",
     "price": 499.99,
     "shippingCost": 49.99,
@@ -53,6 +57,7 @@
     "categories": ["Computers", "Pc Desktop", "Gaming"]
   },
   {
+    "title": "SkyTech Archangel 3.0 Gaming Computer",
     "name": "SkyTech Archangel 3.0 Gaming Computer PC Desktop - Ryzen 5 3600 6-Core 3.6GHz, RTX 3060 12GB, 1TB SSD, 16GB DDR4 3200, RGB Fans, AC WiFi, 600W Gold PSU, Windows 10 Home 64-bit, White ",
     "price": 1399.99,
     "shippingCost": 39.99,
@@ -66,6 +71,7 @@
     "categories": ["Computers", "Pc Desktop", "Gaming"]
   },
   {
+    "title": "Acer Predator Orion 3000 PO3-630-UA15 Gaming Desktop",
     "name": "Acer Predator Orion 3000 PO3-630-UA15 Gaming Desktop | 11th Gen Intel Core i7-11700F 8-Core | GeForce RTX 3070 | 16GB DDR4 | 512GB NVMe SSD | 1TB HDD | Wi-Fi 6 | Windows 11 Home | RGB Keyboard & Mouse ",
     "price": 1699.99,
     "shippingCost": 45.89,
@@ -79,6 +85,7 @@
     "categories": ["Computers", "Pc Desktop", "Gaming"]
   },
   {
+    "title": "Logitech MK345 Wireless Combo",
     "name": " Logitech MK345 Wireless Combo Full-Sized Keyboard with Palm Rest and Comfortable Right-Handed Mouse, 2.4 GHz Wireless USB Receiver, Compatible with PC, Laptop ",
     "price": 49.74,
     "shippingCost": 15.89,
@@ -93,6 +100,7 @@
     "categories": ["Peripheral"]
   },
   {
+    "title": "Redragon S101 Wired Gaming combo",
     "name": "Redragon S101 Wired Gaming Keyboard and Mouse Combo RGB Backlit Gaming Keyboard with Multimedia Keys Wrist Rest and Red Backlit Gaming Mouse 3200 DPI for Windows PC Gamers (Black) ",
     "price": 35.98,
     "shippingCost": 13.58,
@@ -107,6 +115,7 @@
     "categories": ["Peripheral"]
   },
   {
+    "title": "Rii Primer RGB Compact Gaming Office Keyboard",
     "name": "Rii Primer RGB Compact Gaming Office Keyboard RK104,Backlight Keyboard,Small 87 Keys No Number Pad Keyboard for Windows PC Laptop Desktop",
     "price": 10.49,
     "shippingCost": 4.5,
@@ -120,6 +129,7 @@
     "categories": ["Peripheral", "Keyboards"]
   },
   {
+    "title": "Verbatim Slimline Full Size Wired Keyboard",
     "name": "Verbatim Slimline Full Size Wired Keyboard USB Plug-and-Play - Compatible with PC, Laptop - Black ",
     "price": 8.95,
     "shippingCost": 5.78,
@@ -133,6 +143,7 @@
     "categories": ["Peripheral", "Keyboards"]
   },
   {
+    "title": "Logitech M510 Wireless Computer Mouse",
     "name": "Logitech M510 Wireless Computer Mouse for PC with USB Unifying Receiver - Graphite",
     "price": 29.99,
     "shippingCost": 12.99,
@@ -147,6 +158,7 @@
     "categories": ["Peripheral", "Mouse"]
   },
   {
+    "title": "NexiGo N60 1080P Web Camera",
     "name": "NexiGo N60 1080P Web Camera, HD Webcam with Microphone, Software Control & Privacy Cover, USB Computer Camera, 110-degree FOV, Plug and Play, for Zoom/Skype/Teams, Conferencing and Video Calling ",
     "price": 39.99,
     "shippingCost": 10.0,
@@ -161,6 +173,7 @@
     "categories": ["Peripheral", "Cameras"]
   },
   {
+    "title": "Arteck 2.4G Wireless Keyboard",
     "name": "Arteck 2.4G Wireless Keyboard Stainless Steel Ultra Slim Full Size Keyboard with Numeric Keypad for Computer/Desktop/PC/Laptop/Surface/Smart TV and Windows 10/8/ 7 Built in Rechargeable Battery ",
     "price": 27.99,
     "shippingCost": 12.0,
@@ -174,6 +187,7 @@
     "categories": ["Peripheral", "Keyboards"]
   },
   {
+    "title": "NPET K10 Gaming Keyboard",
     "name": "NPET K10 Gaming Keyboard, LED Backlit, Spill-Resistant Design, Multimedia Keys, Quiet Silent USB Membrane Keyboard for Desktop, Computer, PC (Black) ",
     "price": 20.99,
     "shippingCost": 39.99,
@@ -188,6 +202,7 @@
     "categories": ["Peripheral", "Keyboards"]
   },
   {
+    "title": "UBOTIE Colorful Bluetooth 100Keys Keyboards",
     "name": "UBOTIE Colorful Bluetooth 100Keys Keyboards, Wireless Compact Rainbow Gradual Colors Retro Typewriter Flexible Keyboard for Tablet, Cellphones, PC (Purple-Colorful) ",
     "price": 39.99,
     "shippingCost": 6.0,
@@ -201,6 +216,7 @@
     "categories": ["Peripheral", "Keyboards"]
   },
   {
+    "title": "HOTWEEMS D-09 Wireless Mouse for Laptop",
     "name": "HOTWEEMS D-09 Wireless Mouse for Laptop - Ergonomic Plus Computer USB Cordless Mice, Ergo Grips, Lightspeed 5-Level 2400 DPI, 16 Months Battery, Portable for PC Mac Chromebook, 6 Button, Stormy Black ",
     "price": 9.59,
     "shippingCost": 5.4,
@@ -216,6 +232,7 @@
     "categories": ["Peripheral", "Mouse"]
   },
   {
+    "title": "seenda Wireless Mouse",
     "name": "seenda Wireless Mouse, 2.4G Noiseless Mouse with USB Receiver - Portable Computer Mice for PC, Tablet, Laptop with Windows System - Mint Green ",
     "price": 10.98,
     "shippingCost": 2.99,
@@ -230,6 +247,7 @@
     "categories": ["Peripheral", "Mouse"]
   },
   {
+    "title": "Wired Gaming Mouse",
     "name": "Wired Gaming Mouse, PC Gaming Mice [Breathing RGB LED] [Plug Play] High-Precision Adjustable 7200 DPI, 7 Programmable Buttons, Ergonomic Computer USB Mouse for Windows/PC/Mac/Laptop Gamer ",
     "price": 14.59,
     "shippingCost": 19.64,
@@ -245,6 +263,7 @@
     "categories": ["Peripheral", "Mouse"]
   },
   {
+    "title": "Logitech MX Master 2S Wireless Mouse",
     "name": "Logitech MX Master 2S Wireless Mouse – Use on Any Surface, Hyper-Fast Scrolling, Ergonomic Shape, Rechargeable, Control Upto 3 Apple Mac and Windows Computers, Graphite (Discontinued by Manufacturer) ",
     "price": 52.9,
     "shippingCost": 17.09,
@@ -259,6 +278,7 @@
     "categories": ["Peripheral", "Mouse"]
   },
   {
+    "title": "Webcam HD 1080p Web Camera",
     "name": "Webcam HD 1080p Web Camera, USB PC Computer Webcam with Microphone, Laptop Desktop Full HD Camera Video Webcam 110 Degree Widescreen, Pro Streaming Webcam for Recording, Calling, Conferencing, Gaming ",
     "price": 27.99,
     "shippingCost": 11.5,
@@ -272,6 +292,7 @@
     "categories": ["Peripheral", "Cameras"]
   },
   {
+    "title": "1080P Webcam with Microphone",
     "name": "1080P Webcam with Microphone, eMeet C960 Web Camera, 2 Mics Streaming Webcam with Privacy Cover, 90°View Computer Camera, Plug&Play USB Webcam for Calls/Conference, Zoom/Skype/YouTube, Laptop/Desktop ",
     "price": 33.99,
     "shippingCost": 11.8,
@@ -286,6 +307,7 @@
     "categories": ["Peripheral", "Cameras"]
   },
   {
+    "title": "Logitech C922x Pro Stream Webcam",
     "name": "Logitech C922x Pro Stream Webcam – Full 1080p HD Camera ",
     "price": 97.69,
     "shippingCost": 0,
@@ -299,6 +321,7 @@
     "categories": ["Peripheral", "Cameras"]
   },
   {
+    "title": "Logitech C270 HD Webcam",
     "name": "Logitech C270 HD Webcam, HD 720p, Widescreen HD Video Calling, HD Light Correction, Noise-Reducing Mic, For Skype, FaceTime, Hangouts, WebEx, PC/Mac/Laptop/Macbook/Tablet - Black ",
     "price": 24.5,
     "shippingCost": 11.35,
@@ -312,6 +335,7 @@
     "categories": ["Peripheral", "Cameras"]
   },
   {
+    "title": "NexiGo N930AF Webcam with Software Control",
     "name": "NexiGo N930AF Webcam with Software Control, Stereo Microphone and Privacy Cover, Autofocus, 1080p FHD USB Web Camera, Compatible with Zoom/Skype/Teams/Webex, PC Mac Desktop ",
     "price": 54.99,
     "shippingCost": 0,
@@ -325,6 +349,7 @@
     "categories": ["Peripheral", "Cameras"]
   },
   {
+    "title": "SAMSUNG 980 SSD 1TB",
     "name": "SAMSUNG 980 SSD 1TB M.2 NVMe Interface Internal Solid State Drive with V-NAND Technology for Gaming, Heavy Graphics, Full Power Mode, MZ-V8V1T0B/AM",
     "price": 99.99,
     "shippingCost": 42.47,
@@ -338,6 +363,7 @@
     "categories": ["SSD", "Components", "Gaming"]
   },
   {
+    "title": "Crucial BX500 2TB",
     "name": "Crucial BX500 2TB 3D NAND SATA 2.5-Inch Internal SSD, up to 540MB/s - CT2000BX500SSD1",
     "price": 159.99,
     "shippingCost": 35.72,
@@ -351,6 +377,7 @@
     "categories": ["SSD", "Components", "Gaming"]
   },
   {
+    "title": "Kingston 120GB A400",
     "name": "Kingston 120GB A400 SATA 3 2.5 Internal SSD SA400S37/120G - HDD Replacement for Increase Performance , Black",
     "price": 29.04,
     "shippingCost": 42.19,
@@ -364,6 +391,7 @@
     "categories": ["SSD", "Components"]
   },
   {
+    "title": "Kingston 480GB A400",
     "name": "Kingston 480GB A400 SATA 3 2.5 Internal SSD SA400S37/480G - HDD Replacement for Increase Performance",
     "price": 54.99,
     "shippingCost": 34.57,
@@ -377,6 +405,7 @@
     "categories": ["SSD", "Components"]
   },
   {
+    "title": "SanDisk 1TB Extreme Portable SSD",
     "name": "SanDisk 1TB Extreme Portable SSD - Up to 1050MB/s - USB-C, USB 3.2 Gen 2 - External Solid State Drive - SDSSDE61-1T00-G25",
     "price": 134.0,
     "shippingCost": 30,
@@ -390,6 +419,7 @@
     "categories": ["SSD", "Components"]
   },
   {
+    "title": "WD 5TB Elements Portable HDD",
     "name": "WD 5TB Elements Portable External Hard Drive HDD, USB 3.0, Compatible with PC, Mac, PS4 & Xbox - WDBU6Y0050BBK-WESN",
     "price": 104.99,
     "shippingCost": 32,
@@ -403,6 +433,7 @@
     "categories": ["HDD", "Components"]
   },
   {
+    "title": "Seagate BarraCuda 2TB Internal HDD",
     "name": "Seagate BarraCuda 2TB Internal Hard Drive HDD – 3.5 Inch SATA 6Gb/s 7200 RPM 256MB Cache 3.5-Inch – Frustration Free Packaging (ST2000DM008/ST2000DMZ08)",
     "price": 46.99,
     "shippingCost": 41.97,
@@ -416,6 +447,7 @@
     "categories": ["HDD", "Components"]
   },
   {
+    "title": "Seagate Portable 2TB External HDD",
     "name": "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PlayStation, & Xbox - 1-Year Rescue Service (STGX2000400)",
     "price": 59.99,
     "shippingCost": 13.45,
@@ -429,6 +461,7 @@
     "categories": ["HDD", "Components"]
   },
   {
+    "title": "Western Digital 2TB WD",
     "name": "Western Digital 2TB WD Blue PC Hard Drive - 7200 RPM Class, SATA 6 Gb/s, 256 MB Cache, 3.5 - WD20EZBX",
     "price": 46.99,
     "shippingCost": 23.45,
@@ -442,6 +475,7 @@
     "categories": ["HDD", "Components"]
   },
   {
+    "title": "Seagate IronWolf 4TB NAS HDD",
     "name": "Seagate IronWolf 4TB NAS Internal Hard Drive HDD – CMR 3.5 Inch SATA 6Gb/s 5900 RPM 64MB Cache for RAID Network Attached Storage – Frustration Free Packaging (ST4000VN008)",
     "price": 79.99,
     "shippingCost": 43.0,
@@ -455,6 +489,7 @@
     "categories": ["HDD", "Components"]
   },
   {
+    "title": "HP LaserJet Pro M404dn",
     "name": "HP LaserJet Pro M404dn Auto Duplex Monochrome Laser Printer",
     "price": 369.0,
     "shippingCost": 55.78,
@@ -468,6 +503,7 @@
     "categories": ["Printers", "Laser Printers"]
   },
   {
+    "title": "Canon imageCLASS LBP6230dw",
     "name": "Canon imageCLASS LBP6230dw wireless Monochrome laser printer with Duplex printing, 26 ppm",
     "price": 161.24,
     "shippingCost": 161.24,
@@ -481,6 +517,7 @@
     "categories": ["Printers", "Laser Printers"]
   },
   {
+    "title": "Xerox B310 Printer",
     "name": "Xerox B310 Printer, Up To 42 ppm, Letter/Legal, USB/Ethernet And Wireless, 250-Sheet Tray, Automatic 2-Sided Printing, 110V",
     "price": 379.99,
     "shippingCost": 55.78,
@@ -494,6 +531,7 @@
     "categories": ["Printers", "Laser Printers"]
   },
   {
+    "title": "Okidata C331dn Printer",
     "name": "Okidata C331dn (62443601) Up to 25 ppm 1200 x 600 dpi USB/Ethernet Color Duplex Laser Printer",
     "price": 499.99,
     "shippingCost": 65.72,
@@ -507,6 +545,7 @@
     "categories": ["Printers", "Laser Printers"]
   },
   {
+    "title": "HP DeskJet 2755e Printer",
     "name": "HP DeskJet 2755e All-in-One Wireless Color Printer, with bonus 6 months free Instant Ink with HP+ (26K67A)",
     "price": 79.99,
     "shippingCost": 10.55,
@@ -520,6 +559,7 @@
     "categories": ["Printers", "Deskjet Printers"]
   },
   {
+    "title": "Epson WorkForce WF-2860 Printer",
     "name": "Epson WorkForce WF-2860 All-in-One Wireless Color Printer with Scanner, Copier, Fax, Ethernet, Wi-Fi Direct and NFC",
     "price": 149.99,
     "shippingCost": 22.56,
@@ -533,6 +573,7 @@
     "categories": ["Printers", "Deskjet Printers"]
   },
   {
+    "title": "Canon PIXMA TS3420 Printer",
     "name": "Canon PIXMA TS3420 Wireless Inkjet All-In-One Printer - Black/White",
     "price": 135.99,
     "shippingCost": 9.78,
@@ -545,6 +586,7 @@
     "categories": ["Printers", "Deskjet Printers"]
   },
   {
+    "title": "Samsung Galaxy Tab A8 Android Tablet",
     "name": "Samsung Galaxy Tab A8 Android Tablet, 10.5” LCD Screen, 32GB Storage, Long-Lasting Battery, Samsung Electronics Kids Content, Smart Switch, Expandable Memory, Dark Gray ",
     "price": 199.99,
     "shippingCost": 0,
@@ -558,6 +600,7 @@
     "categories": ["Tablets"]
   },
   {
+    "title": "Tablet 10 inch Android Tablet",
     "name": "Tablet 10 inch Android Tablet, Android 10.0 Tablet Quad-Core Processor 32GB Storage Tablet Computer, 2GB RAM, 8MP Camera, Long Battery Life (Black) ",
     "price": 89.99,
     "shippingCost": 0,
@@ -572,6 +615,7 @@
     "categories": ["Tablets"]
   },
   {
+    "title": "Lenovo Tab M8 Tablet",
     "name": "Lenovo Tab M8 Tablet, HD Android Tablet, Quad-Core Processor, 2GHz, 32GB Storage, Full Metal Cover, Long Battery Life, Android 9 Pie, Slate Black ",
     "price": 99.99,
     "shippingCost": 0,
@@ -585,6 +629,7 @@
     "categories": ["Tablets"]
   },
   {
+    "title": "Tablet 10 inch Android 11",
     "name": "Tablet 10 inch Android 11 Octa-Core Processor Dual Sim Cellular 4G LTE Tablet PC 4GB RAM 64GB ROM 128GB Expandable, Google Certified Tablet with Keyboard 13 MP Camera Bluetooth WiFi GPS ",
     "price": 159.99,
     "shippingCost": 0,
@@ -598,6 +643,7 @@
     "categories": ["Tablets"]
   },
   {
+    "title": "Tablet Android Tablet 10.1 inch",
     "name": "Tablet Android Tablet 10.1 inch 32GB ROM 2GB RAM Tablets 6000mAh Battery Quad Core HD Touchscreen Tablets PC Black ",
     "price": 79.99,
     "shippingCost": 0,
@@ -611,6 +657,7 @@
     "categories": ["Tablets"]
   },
   {
+    "title": "HP M27ha FHD Monitor",
     "name": "HP M27ha FHD Monitor - Full HD Monitor (1920 x 1080p) - IPS Panel and Built-in Audio - VESA Compatible 27-inch Monitor Designed for Comfortable Viewing with Height and Pivot Adjustment - (22H94AA#ABA) ",
     "price": 217.0,
     "shippingCost": 35.16,
@@ -625,6 +672,7 @@
     "categories": ["Monitors"]
   },
   {
+    "title": "HP V223ve FHD Monitor",
     "name": "HP V223ve FHD Monitor, 1080p VA Display,75Hz Refresh Rate, 21.5-inch Computer Screen,TÜV certified Low Blue Light Mode, Ergonomic Tilt,3000:1 Contrast Ratio,HDMI & VGA Ports,VESA Mounting (2021),Black ",
     "price": 143.0,
     "shippingCost": 36.38,
@@ -640,6 +688,7 @@
     "categories": ["Monitors"]
   },
   {
+    "title": "SAMSUNG 23.5” CF396 Curved Monitor",
     "name": "SAMSUNG 23.5” CF396 Curved Computer Monitor, AMD FreeSync for Advanced Gaming, 4ms Response Time, Wide Viewing Angle, Ultra Slim Design, LC24F396FHNXZA, Black ",
     "price": 169.99,
     "shippingCost": 39.07,
@@ -654,6 +703,7 @@
     "categories": ["Monitors"]
   },
   {
+    "title": "Sceptre Curved 24' Monitor",
     "name": "Sceptre Curved 24' 75Hz Professional LED Monitor 1080p 98% sRGB HDMI VGA Build-in Speakers, Machine Black 2021",
     "price": 204.0,
     "shippingCost": 43.98,
@@ -668,6 +718,7 @@
     "categories": ["Monitors"]
   },
   {
+    "title": "Dell SE2422HX Monitor",
     "name": "Dell SE2422HX - 23.8-inch FHD (1920 x 1080) 16:9 Monitor with Comfortview (TUV-Certified), 75Hz Refresh Rate, 16.7 Million Colors, Anti-Glare with 3H Hardness, Black",
     "price": 218.99,
     "shippingCost": 49.48,
@@ -681,6 +732,7 @@
     "categories": ["Monitors"]
   },
   {
+    "title": "Acer Aspire 5 A515-46-R3UB",
     "name": "Acer Aspire 5 A515-46-R3UB | 15.6' Full HD IPS Display | AMD Ryzen 3 3350U Quad-Core Mobile Processor | 4GB DDR4 | 128GB NVMe SSD | WiFi 6 | Backlit KB | FPR | Amazon Alexa | Windows 11 Home in S mode",
     "price": 369.99,
     "shippingCost": 0,
@@ -695,6 +747,7 @@
     "categories": ["Laptops", "Computers"]
   },
   {
+    "title": "Lenovo Flex 5 Laptop",
     "name": "Lenovo Flex 5 Laptop, 14.0' FHD Touch Display, AMD Ryzen 5 5500U, 16GB RAM, 256GB Storage, AMD Radeon Graphics, Windows 11 Home ",
     "price": 599.99,
     "shippingCost": 20.26,
@@ -709,6 +762,7 @@
     "categories": ["Laptops", "Computers"]
   },
   {
+    "title": "Newest HP 15.6' HD Laptop Computer",
     "name": "2022 Newest HP 15.6' HD Laptop Computer, 11th Gen Intel Quad-Core i3-1125G4(Up to 3.7GHz, Beat i5-10210U), 8GB RAM, 128GB SSD, Webcam, Bluetooth, Wi-Fi, HDMI, USB-C, Windows 11 S, Silver+JVQ Mousepad ",
     "price": 437.99,
     "shippingCost": 29.11,
@@ -722,6 +776,7 @@
     "categories": ["Laptops", "Computers"]
   },
   {
+    "title": "ASUS VivoBook 15 F515 Laptop",
     "name": "ASUS VivoBook 15 F515 Laptop, 15.6” FHD Display, Intel i3-1115G4 CPU, 8GB DDR4 RAM, 128GB SSD, Windows 11 Home in S Mode, Slate Grey, F515EA-AH34 ",
     "price": 399.99,
     "shippingCost": 21.97,
@@ -735,6 +790,7 @@
     "categories": ["Laptops", "Computers"]
   },
   {
+    "title": "YEAHTU Laptop Privacy Screen",
     "name": "YEAHTU Laptop Privacy Screen - Fits 13.3' Screen 16:9 Ratio, Privacy Screen Filter with Anti-Blue Light and UV Protection - Protect Your Private Information at Work or in Public",
     "price": 34.9,
     "shippingCost": 11.27,
@@ -748,6 +804,7 @@
     "categories": ["Laptops", "Computers"]
   },
   {
+    "title": "HP Pavilion 15 Laptop",
     "name": "HP Pavilion 15 Laptop, 11th Gen Intel Core i7-1165G7 Processor, 16 GB RAM, 512 GB SSD Storage, Full HD IPS Micro-Edge Display, Windows 11 Pro, Compact Design, Long Battery Life (15-eg0025nr, 2021) ",
     "price": 888.0,
     "shippingCost": 76.69,
@@ -763,6 +820,7 @@
     "categories": ["Laptops", "Computers"]
   },
   {
+    "title": "Newest Dell Laptop Latitude 3520",
     "name": "2021 Newest Dell Business Laptop Latitude 3520, 15.6' FHD IPS Backlit Display, i7-1165G7, 32GB RAM, 512GB SSD, Webcam, WiFi 6, USB-C, HDMI, Win 10 Pro",
     "price": 1349.0,
     "shippingCost": 269.58,
