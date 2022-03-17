@@ -9,16 +9,16 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+    },
+    {
+      //creo index en las opciones del modelo para poner propiedad unique
+      //asi luego al crear nunca se repiten
+      indexes: [
+        {
+          unique: true,
+          fields: ["name"],
+        },
+      ],
     }
-    // {
-    //   //creo index en las opciones del modelo para poner propiedad unique
-    //   //asi luego al crear nunca se repiten
-    //   indexes: [
-    //     {
-    //       unique: true,
-    //       fields: ["name"],
-    //     },
-    //   ],
-    // }
   );
 };

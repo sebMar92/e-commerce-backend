@@ -12,8 +12,8 @@ const createProduct = async (data) => {
     stock,
     description,
   });
-  createAndAddImages(images, newProduct);
-  createAndAddCategories(categories, newProduct);
+  await createAndAddImages(images, newProduct);
+  await createAndAddCategories(categories, newProduct);
 };
 
 module.exports = createProduct;

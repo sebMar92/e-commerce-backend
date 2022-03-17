@@ -1,17 +1,14 @@
-const res = require("express/lib/response");
 const { Product, Image, Category } = require("../../database.js");
 
-const getProducts = async () => {
+const getProducts = async (
+  orderDisposition,
+  whereStatement,
+  categoryWhereStatement
+) => {
   try {
     const products = await Product.findAll({
-      attributes: [
-        "name",
-        "id",
-        "price",
-        "shippingCost",
-        "stock",
-        "description",
-      ],
+      ...whereStatement,
+      ...orderDisposition,
       include: [
         {
           model: Image,
@@ -21,19 +18,15 @@ const getProducts = async () => {
         {
           model: Category,
           as: "categories",
-          attributes: ["name"],
+          attributes: ["name", "id"],
+          ...categoryWhereStatement,
           through: {
             attributes: [],
           },
         },
       ],
     });
-    const editableProducts = products.map((product) => product.toJSON());
-    const productsWithSimpleCategories = editableProducts.map((product) => {
-      const categoryName = product.categories.map((category) => category.name);
-      return { ...product, categories: categoryName };
-    });
-    return productsWithSimpleCategories;
+    return products;
   } catch (err) {
     console.log(err);
   }
