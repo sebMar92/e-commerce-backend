@@ -30,14 +30,13 @@ router.get("", async function (req, res) {
     paginationSettings,
     ...filterConditions
   );
+  console.log(limit);
   const pages = await countPages(limit);
-  return res
-    .status(200)
-    .send({
-      products: products,
-      pages: pages,
-      page: offset ? Number(offset) : 1,
-    });
+  return res.status(200).send({
+    products: products,
+    pages: pages,
+    page: offset ? Number(offset) : 1,
+  });
 });
 
 module.exports = router;

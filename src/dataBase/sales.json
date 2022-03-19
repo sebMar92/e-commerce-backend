@@ -1,0 +1,26 @@
+[
+  {
+    "description": "Everything is 10% off on Thursdays!",
+    "percentage": 10,
+    "day": "thursday",
+    "productAmount": 0,
+    "category": 0,
+    "product": 0
+  },
+  {
+    "description": "Buy two mouses, get the third one free!",
+    "percentage": 100,
+    "day": "all",
+    "productAmount": 2,
+    "category": 6,
+    "product": 0
+  },
+  {
+    "description": "Sunday combo: 40% discount on your second keyboard.",
+    "percentage": 40,
+    "day": "sunday",
+    "productAmount": 1,
+    "category": 5,
+    "product": 0
+  }
+]

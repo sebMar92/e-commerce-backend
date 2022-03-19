@@ -1,4 +1,4 @@
-const { Product, Image, Category } = require("../../database.js");
+const { Product, Image, Category, Sale } = require("../../database.js");
 
 const getProducts = async (
   orderDisposition,
@@ -11,6 +11,7 @@ const getProducts = async (
       ...whereStatement,
       ...orderDisposition,
       ...paginationSettings,
+      attributes: ["title", "id", "price", "shippingCost"],
       include: [
         {
           model: Image,
@@ -25,6 +26,15 @@ const getProducts = async (
           through: {
             attributes: [],
           },
+          // include: [
+          //   {
+          //     model: Sale,
+          //     attributes: ["percentage", "day", "productAmount"],
+          //     through: {
+          //       attributes: [],
+          //     },
+          //   },
+          // ],
         },
       ],
     });
