@@ -2,6 +2,8 @@ const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const createUser = require("../controllers/user/createUser.js");
 const authLogin = require("../controllers/user/authLogin.js");
+const { Token } = require("../database.js");
+const generateAccessToken = require("../controllers/user/utils/generateAccessToken.js");
 
 //create Users
 router.post("", async function (req, res) {
@@ -36,8 +38,30 @@ router.post("", async function (req, res) {
 router.post("/login", async function (req, res) {
   const { email, password } = req.body;
   const authResponse = await authLogin(email, password);
-
   res.send(authResponse);
+});
+
+router.post("/token", async function (req, res) {
+  const token = req.body.token;
+  try {
+    if (token == null) return res.sendStatus(401);
+    const storedRefreshToken = await Token.findOne({
+      where: {
+        token: token,
+      },
+    });
+    if (!storedRefreshToken) return res.sendStatus(403);
+
+    jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+      if (err) {
+        return res.sendStatus(403);
+      }
+      const newToken = generateAccessToken(user.user);
+      return res.send({ msg: "new token created", token: newToken });
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = router;

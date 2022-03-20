@@ -1,22 +1,30 @@
 const { User } = require("../../database.js");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+
+const generateAccessToken = require("./utils/generateAccessToken.js");
+const generateRefreshToken = require("./utils/generateRefreshToken.js");
 require("dotenv").config();
 
 const authLogin = async (email, password) => {
-  const user = await User.findOne({
-    where: {
-      email: email,
-    },
-  });
-  if (user == null) {
-    return { error: "email doesn't match any existing user." };
-  }
-  if (await bcrypt.compare(password, user.password)) {
-    const accessToken = jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET);
-    return { msg: "logged in", accessToken: accessToken };
-  } else {
-    return { error: "the password is incorrect." };
+  try {
+    const user = await User.findOne({
+      where: {
+        email: email,
+      },
+    });
+    if (user == null) {
+      return { error: "email doesn't match any existing user." };
+    }
+    if (await bcrypt.compare(password, user.password)) {
+      const accessToken = await generateAccessToken(user);
+      const refreshToken = await generateRefreshToken(user);
+
+      return { msg: "logged in", accessToken: accessToken, refreshToken: refreshToken };
+    } else {
+      return { error: "the password is incorrect." };
+    }
+  } catch (err) {
+    console.log(err);
   }
 };
 
