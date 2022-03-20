@@ -27,13 +27,10 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`,
-        {
-          logging: false, // set to console.log to see the raw SQL queries
-          native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-        }
-      );
+    : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`, {
+        logging: false, // set to console.log to see the raw SQL queries
+        native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+      });
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -41,8 +38,7 @@ const modelDefiners = [];
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, "/models"))
   .filter(
-    (file) =>
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+    (file) => file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
   )
   .forEach((file) => {
     modelDefiners.push(require(path.join(__dirname, "/models", file)));
@@ -60,7 +56,7 @@ let capsEntries = entries.map((entry) => [
 sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Category, Product, Image, Comment, Sale, Newsletter } =
+const { User, Direction, Category, Product, Image, Comment, Sale, Newsletter, Token } =
   sequelize.models;
 
 User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });
@@ -68,6 +64,8 @@ Product.belongsToMany(User, { through: "Wishlist" });
 
 User.belongsToMany(Product, { through: "ShoppingCart", as: "shoppingProduct" });
 Product.belongsToMany(User, { through: "ShoppingCart" });
+
+User.hasMany(Direction);
 
 Category.belongsToMany(Product, { through: "Category_Product" });
 Product.belongsToMany(Category, { through: "Category_Product" });
