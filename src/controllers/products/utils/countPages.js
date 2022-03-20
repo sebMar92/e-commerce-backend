@@ -3,12 +3,7 @@ const { Product, Category } = require("../../../database.js");
 
 const Op = Sequelize.Op;
 
-const countPages = async (
-  itemsPerPage,
-  whereStatement,
-  categoryWhereStatement
-) => {
-  console.log("count ", whereStatement, categoryWhereStatement);
+const countPages = async (itemsPerPage, whereStatement, categoryWhereStatement) => {
   const products = await Product.findAll({
     ...whereStatement,
     include: [
@@ -24,7 +19,6 @@ const countPages = async (
     ],
   });
   const amountOfProducts = products.length;
-  console.log(amountOfProducts);
   if (!itemsPerPage) {
     itemsPerPage = 16;
   }
