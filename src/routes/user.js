@@ -16,7 +16,7 @@ router.post("", async function (req, res) {
     rol,
     newsletterSubscription,
     direction,
-  } = req.query;
+  } = req.body;
   try {
     createUser(
       firstName,
