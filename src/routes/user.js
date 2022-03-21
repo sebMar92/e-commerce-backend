@@ -18,7 +18,7 @@ router.post("", async function (req, res) {
     direction,
   } = req.body;
   try {
-    createUser(
+    await createUser({
       firstName,
       lastName,
       password,
@@ -26,8 +26,8 @@ router.post("", async function (req, res) {
       email,
       rol,
       newsletterSubscription,
-      direction
-    );
+      direction,
+    });
 
     return res.status(201).send({ msg: "User created" });
   } catch (err) {
