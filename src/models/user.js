@@ -13,12 +13,14 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       password: {
-        type: DataTypes.STRING, //falta hash
+        type: DataTypes.STRING,
         allowNull: false,
       },
       profilePicture: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue:
+          "https://cdn.pixabay.com/photo/2015/01/01/22/15/woman-586185_960_720.jpg",
         validate: {
           isUrl: true,
         },
@@ -33,6 +35,7 @@ module.exports = (sequelize) => {
       rol: {
         type: DataTypes.ENUM("guest", "user", "admin"),
         allowNull: false,
+        defaultValue: "user",
       },
       newsletterSubscription: {
         type: DataTypes.BOOLEAN,
