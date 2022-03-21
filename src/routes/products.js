@@ -6,16 +6,8 @@ const orderCompose = require("../controllers/products/utils/orderCompose.js");
 const paginationCompose = require("../controllers/products/utils/paginationCompose.js");
 
 router.get("", async function (req, res) {
-  const {
-    search,
-    minPrice,
-    maxPrice,
-    freeShipping,
-    categoryId,
-    order,
-    limit,
-    offset,
-  } = req.query;
+  const { search, minPrice, maxPrice, freeShipping, categoryId, order, limit, offset } =
+    req.query;
   const filterConditions = await filterCompose(
     search,
     minPrice,
@@ -30,7 +22,6 @@ router.get("", async function (req, res) {
     paginationSettings,
     ...filterConditions
   );
-
   const pages = await countPages(limit, ...filterConditions);
   return res.status(200).send({
     products: products,
