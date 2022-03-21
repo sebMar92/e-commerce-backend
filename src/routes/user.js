@@ -6,7 +6,6 @@ const { Token } = require("../database.js");
 const generateAccessToken = require("../controllers/user/utils/generateAccessToken.js");
 const verifyEmail = require("../controllers/user/utils/verifyEmail.js");
 
-//create Users
 router.post("", async function (req, res) {
   const {
     firstName,
