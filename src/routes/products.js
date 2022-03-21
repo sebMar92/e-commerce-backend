@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const getAverageValues = require("../controllers/products/getAverageValues.js");
 const getProducts = require("../controllers/products/getProducts.js");
 const countPages = require("../controllers/products/utils/countPages.js");
 const filterCompose = require("../controllers/products/utils/filterCompose.js");
@@ -24,12 +23,10 @@ router.get("", async function (req, res) {
     ...filterConditions
   );
   const pages = await countPages(limit, ...filterConditions);
-  const prices = await getAverageValues(...filterConditions);
   return res.status(200).send({
     products: products,
     pages: pages,
     page: offset ? Number(offset) : 1,
-    prices: prices,
   });
 });
 

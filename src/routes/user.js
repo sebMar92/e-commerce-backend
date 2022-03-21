@@ -4,6 +4,7 @@ const createUser = require("../controllers/user/createUser.js");
 const authLogin = require("../controllers/user/authLogin.js");
 const { Token } = require("../database.js");
 const generateAccessToken = require("../controllers/user/utils/generateAccessToken.js");
+const verifyEmail = require("../controllers/user/utils/verifyEmail.js");
 
 //create Users
 router.post("", async function (req, res) {
@@ -39,6 +40,12 @@ router.post("/login", async function (req, res) {
   const { email, password } = req.body;
   const authResponse = await authLogin(email, password);
   res.send(authResponse);
+});
+
+router.post("/email", async function (req, res) {
+  const { email } = req.body;
+  const msg = await verifyEmail(email);
+  res.send(msg);
 });
 
 router.post("/token", async function (req, res) {

@@ -24,7 +24,9 @@ const createUser = async (data) => {
     rol: rol,
     newsletterSubscription: newsletterSubscription,
   });
-  await createAndAddDirection(direction, newUser);
+  if (direction) {
+    await createAndAddDirection(direction, newUser);
+  }
 };
 
 module.exports = createUser;
