@@ -56,8 +56,18 @@ let capsEntries = entries.map((entry) => [
 sequelize.models = Object.fromEntries(capsEntries);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Direction, Category, Product, Image, Comment, Sale, Newsletter, Token } =
-  sequelize.models;
+const {
+  User,
+  Direction,
+  Category,
+  Product,
+  Image,
+  Comment,
+  Sale,
+  Newsletter,
+  Token,
+  Order,
+} = sequelize.models;
 
 User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });
 Product.belongsToMany(User, { through: "Wishlist" });
@@ -66,6 +76,9 @@ User.belongsToMany(Product, { through: "ShoppingCart", as: "shoppingProduct" });
 Product.belongsToMany(User, { through: "ShoppingCart" });
 
 User.hasMany(Direction);
+
+User.hasMany(Order);
+Product.hasMany(Order);
 
 Category.belongsToMany(Product, { through: "Category_Product" });
 Product.belongsToMany(Category, { through: "Category_Product" });
