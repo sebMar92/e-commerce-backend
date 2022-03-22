@@ -19,7 +19,7 @@ const filterCompose = async (
 
     whereStatement.where.price = { [Op.between]: [min, max] };
   }
-  if (freeShipping) {
+  if (freeShipping === "true") {
     whereStatement.where.shippingCost = 0;
   }
   var categoryWhereStatement = { where: {} };
