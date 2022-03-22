@@ -3,7 +3,7 @@ const changeOrderStatus = require("../controllers/orders/changeOrderStatus.js");
 const createOrder = require("../controllers/orders/createOrder.js");
 const getProductsWithOrders = require("../controllers/orders/getProductsWithOrders.js");
 const authToken = require("./middlewares/authToken.js");
-//create order (depende el status si la agrega a wishlist, carrito, pasa a pendiente de compra -durante carrusel- o a compra terminada)
+//create order (depende el status si la agrega a wishlist, carrito, pasa a pendiente de compra -durante la pasarela- o a compra terminada)
 router.post("", authToken, async function (req, res) {
   const { status, amount, productId } = req.body;
   const user = req.user.user;
@@ -34,9 +34,9 @@ router.put("/:id", authToken, async function (req, res) {
   if (orderChanged) {
     return res.send({ msg: "status changed" });
   }
-  return res.send({ error: "couldn't edit order status" });
+  return res.send({ error: "couldn't edit order's status" });
 });
-
+// borrar order (quitar de wishlist, quitar de carrito, cancelar compra)
 router.delete("/:id", authToken, async function (req, res) {
   const { id } = req.query;
 
