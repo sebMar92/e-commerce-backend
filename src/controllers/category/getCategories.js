@@ -7,7 +7,6 @@ const getCategories = async (query) => {
     const categories = query
       ? await Category.findAll({ where: { name: { [Op.iLike]: `%${query}%` } } })
       : await Category.findAll();
-    const categoriesResult = categories.map((category) => category.name);
     return categories;
   } catch (err) {
     console.log(err);
