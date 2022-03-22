@@ -18,10 +18,7 @@ const countPages = async (itemsPerPage, whereStatement, categoryWhereStatement) 
       },
     ],
   });
-<<<<<<< HEAD
-=======
   const amountOfProducts = products.length;
->>>>>>> f00ec937bcf357dbcadb7bf68cc1d18b8a5b5fb2
   if (!itemsPerPage) {
     itemsPerPage = 16;
   }

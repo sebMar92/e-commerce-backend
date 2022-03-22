@@ -22,12 +22,7 @@ router.get("", async function (req, res) {
     paginationSettings,
     ...filterConditions
   );
-<<<<<<< HEAD
-  console.log(limit);
-  const pages = await countPages(limit);
-=======
   const pages = await countPages(limit, ...filterConditions);
->>>>>>> f00ec937bcf357dbcadb7bf68cc1d18b8a5b5fb2
   return res.status(200).send({
     products: products,
     pages: pages,
