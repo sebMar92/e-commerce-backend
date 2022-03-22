@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const changeOrderAmount = require("../controllers/orders/changeOrderAmount.js");
 const changeOrderStatus = require("../controllers/orders/changeOrderStatus.js");
 const createOrder = require("../controllers/orders/createOrder.js");
 const getProductsWithOrders = require("../controllers/orders/getProductsWithOrders.js");
@@ -27,13 +28,20 @@ router.get("", authToken, async function (req, res) {
 });
 //modificar estado de orden (pasar de wishlist a carrito, de carrito a pendiente, de pendiente a terminado, etc)
 router.put("/:id", authToken, async function (req, res) {
-  const { status } = req.body;
+  const { status, amount } = req.body;
   const { id } = req.query;
-
-  const orderChanged = await changeOrderStatus(id, status);
-  if (orderChanged) {
-    return res.send({ msg: "status changed" });
+  if (status) {
+    const orderChanged = await changeOrderStatus(id, status);
+    if (orderChanged) {
+      return res.send({ msg: "status changed" });
+    }
+  } else if (amount) {
+    const orderChanged = await changeOrderAmount(id, amount);
+    if (orderChanged) {
+      return res.send({ msg: "amount changed" });
+    }
   }
+
   return res.send({ error: "couldn't edit order's status" });
 });
 // borrar order (quitar de wishlist, quitar de carrito, cancelar compra)
