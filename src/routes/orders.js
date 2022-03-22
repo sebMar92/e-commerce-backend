@@ -27,6 +27,7 @@ router.get("", authToken, async function (req, res) {
   return res.send({ error: "couldn't find orders" });
 });
 //modificar estado de orden (pasar de wishlist a carrito, de carrito a pendiente, de pendiente a terminado, etc)
+//modificar cantidad de la orden
 router.put("/:id", authToken, async function (req, res) {
   const { status, amount } = req.body;
   const { id } = req.query;
@@ -42,7 +43,7 @@ router.put("/:id", authToken, async function (req, res) {
     }
   }
 
-  return res.send({ error: "couldn't edit order's status" });
+  return res.send({ error: "couldn't edit order" });
 });
 // borrar order (quitar de wishlist, quitar de carrito, cancelar compra)
 router.delete("/:id", authToken, async function (req, res) {
