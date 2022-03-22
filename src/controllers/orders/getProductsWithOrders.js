@@ -1,6 +1,6 @@
 const { Order, Product } = require("../../database.js");
 
-const getProductsInCart = async (user) => {
+const getProductsWithOrders = async (user, status) => {
   const inCartProducts = await Product.findAll({
     attributes: ["title", "id", "price", "shippingCost", "stock"],
     include: [
@@ -19,4 +19,4 @@ const getProductsInCart = async (user) => {
   return false;
 };
 
-module.exports = getProductsInCart;
+module.exports = getProductsWithOrders;
