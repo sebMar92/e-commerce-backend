@@ -1,6 +1,5 @@
 const { Category } = require("../../database.js");
 const Sequelize = require("sequelize");
-
 const Op = Sequelize.Op;
 
 const getCategories = async (query) => {
