@@ -52,11 +52,11 @@ const getProducts = async (
       product.sales = { productSales: productSales };
       let categorySales = [];
       for (let category of product.categories) {
-        if (category.hasOwnProperty("sales")) {
-          category.sales.categoryId = category.id;
-          categorySales.push(...category.sales);
-          delete category.sales;
-        }
+        // if (category.hasOwnProperty("sales")) {
+        category.sales.categoryId = category.id;
+        categorySales.push(...category.sales);
+        delete category.sales;
+        // }
       }
       product.sales.categorySales = categorySales.flat();
       return product;
