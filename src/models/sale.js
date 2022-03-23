@@ -29,5 +29,10 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: 0,
     },
+    global: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   });
 };

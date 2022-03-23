@@ -1,7 +1,6 @@
 const products = require("./products.json");
 const sales = require("./sales.json");
 const { Product, Sale } = require("../database.js");
-const createProduct = require("../controllers/products/createProduct.js");
 const createAndAddSale = require("../controllers/sales/createAndAddSale");
 const users = require("./users.json");
 const createProduct = require("../controllers/products/createProduct.js");
@@ -12,9 +11,9 @@ const loadMockData = async () => {
   for await (const p of products) {
     await createProduct(p);
   }
-  // for await (const s of sales) {
-  //   await createAndAddSale(s);
-  // }
+  for await (const s of sales) {
+    await createAndAddSale(s);
+  }
   for (const u of users) {
     await createUser(u);
   }

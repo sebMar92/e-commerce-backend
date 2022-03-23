@@ -22,5 +22,13 @@
     "productAmount": 1,
     "category": 5,
     "product": 0
+  },
+  {
+    "description": "Surpirse sale, get 25% off if you buy this item today!",
+    "percentage": 25,
+    "day": "monday",
+    "productAmount": 0,
+    "category": 0,
+    "product": 15
   }
 ]
