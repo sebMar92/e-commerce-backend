@@ -19,8 +19,10 @@ const createAndAddSale = async (salesData) => {
     if (product > 0) {
       newSale.addProduct(product);
     }
+    return true;
   } catch (err) {
     console.log(err);
+    return false;
   }
 };
 
