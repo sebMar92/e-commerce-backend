@@ -14,6 +14,7 @@ const getUser = async (id) => {
     return simpleUser;
   } catch (err) {
     console.log(err);
+    return { error: "user doesn't exist" };
   }
 };
 module.exports = getUser;
