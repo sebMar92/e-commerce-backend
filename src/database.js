@@ -90,8 +90,8 @@ Sale.belongsToMany(Category, { through: "Sale_Category" });
 Category.belongsToMany(Sale, { through: "Sale_Category" });
 
 User.hasMany(Comment);
-
 Product.hasMany(Comment);
+
 Product.hasMany(Image);
 
 module.exports = {

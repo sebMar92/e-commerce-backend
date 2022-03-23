@@ -7,6 +7,7 @@ const productByID = require("./productByID");
 const users = require("./user.js");
 const orders = require("./orders.js");
 const sales = require("./sales.js");
+const comments = require("./comments.js");
 const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/ruta', ruta);
@@ -16,5 +17,6 @@ router.use("/categories", categories);
 router.use("/user", users);
 router.use("/order", orders);
 router.use("/sale", sales);
+router.use("/comment", comments);
 
 module.exports = router;
