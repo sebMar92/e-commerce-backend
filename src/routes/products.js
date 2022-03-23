@@ -26,7 +26,7 @@ router.get("", async function (req, res) {
   const pages = await countPages(limit, ...filterConditions);
   const globalSales = await Sale.findAll({
     where: { global: true },
-    attributes: ["percentage", "day", "productAmount"],
+    attributes: ["percentage", "day", "productAmount", "id"],
   });
   return res.status(200).send({
     products: products,

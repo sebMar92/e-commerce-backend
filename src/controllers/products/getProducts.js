@@ -15,7 +15,7 @@ const getProducts = async (
       include: [
         {
           model: Sale,
-          attributes: ["percentage", "day", "productAmount"],
+          attributes: ["percentage", "day", "productAmount", "id"],
           through: {
             attributes: [],
           },
@@ -36,7 +36,7 @@ const getProducts = async (
           include: [
             {
               model: Sale,
-              attributes: ["percentage", "day", "productAmount"],
+              attributes: ["percentage", "day", "productAmount", "id"],
               through: {
                 attributes: [],
               },
