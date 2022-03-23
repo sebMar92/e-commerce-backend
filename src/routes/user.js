@@ -7,6 +7,7 @@ const generateAccessToken = require("../controllers/user/utils/generateAccessTok
 const verifyEmail = require("../controllers/user/utils/verifyEmail.js");
 const authToken = require("./middlewares/authToken.js");
 const getUser = require("../controllers/user/getUser.js");
+const editUser = require("../controllers/user/editUser.js");
 
 //crear nuevo usuario
 router.post("", async function (req, res) {
@@ -78,6 +79,12 @@ router.get("", authToken, async function (req, res) {
   const rawUser = req.user.user;
   const user = await getUser(rawUser.id);
   res.send(user);
+});
+
+router.put("", authToken, async function (req, res) {
+  const user = req.user.user;
+  const editedUser = await editUser(req.body, user.id);
+  res.send(editedUser);
 });
 
 module.exports = router;
