@@ -9,6 +9,12 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue:
+          "https://www.warnborough.online/wp-content/uploads/2017/05/technology-785742_1920.jpg",
+      },
     },
     {
       //creo index en las opciones del modelo para poner propiedad unique

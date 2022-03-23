@@ -503,6 +503,34 @@
     "categories": ["Printers", "Laser Printers"]
   },
   {
+    "title": "HP LaserJet Pro M404dn",
+    "name": "HP LaserJet Pro M404dn Auto Duplex Monochrome Laser Printer",
+    "price": 369.0,
+    "shippingCost": 55.78,
+    "description": "Model #: W1A53A (Replaces m402dn C5F94A / m402dne C5J91A). Print up to 40 ppm Auto Duplex Printing HP FastRes1200 (Enhanced up to 4800 x 600 dpi) Black Print Quality. Gigabit Ethernet 10/100/1000BASE-T network Up to 80,000 pages monthly. 256 MB DRAM; 256 MB Flash Memory, Uses HP 58A Standard Yield (CF258A) or 58X High Yield (CF258X) Black Original LaserJet Toner Cartridges",
+    "images": [
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V80.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V03.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V04.jpg"
+    ],
+    "stock": 100,
+    "categories": ["Printers", "Laser Printers"]
+  },
+  {
+    "title": "HP LaserJet Pro M404dn",
+    "name": "HP LaserJet Pro M404dn Auto Duplex Monochrome Laser Printer",
+    "price": 369.0,
+    "shippingCost": 55.78,
+    "description": "Model #: W1A53A (Replaces m402dn C5F94A / m402dne C5J91A). Print up to 40 ppm Auto Duplex Printing HP FastRes1200 (Enhanced up to 4800 x 600 dpi) Black Print Quality. Gigabit Ethernet 10/100/1000BASE-T network Up to 80,000 pages monthly. 256 MB DRAM; 256 MB Flash Memory, Uses HP 58A Standard Yield (CF258A) or 58X High Yield (CF258X) Black Original LaserJet Toner Cartridges",
+    "images": [
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V80.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V03.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V04.jpg"
+    ],
+    "stock": 100,
+    "categories": ["Printers", "Laser Printers"]
+  },
+  {
     "title": "Canon imageCLASS LBP6230dw",
     "name": "Canon imageCLASS LBP6230dw wireless Monochrome laser printer with Duplex printing, 26 ppm",
     "price": 161.24,
@@ -543,6 +571,34 @@
     ],
     "stock": 100,
     "categories": ["Printers", "Laser Printers"]
+  },
+  {
+    "title": "HP DeskJet 2755e Printer",
+    "name": "HP DeskJet 2755e All-in-One Wireless Color Printer, with bonus 6 months free Instant Ink with HP+ (26K67A)",
+    "price": 79.99,
+    "shippingCost": 10.55,
+    "description": "BEST FOR BASIC PRINTING - Print basic color documents like recipes, forms and travel documents.. KEY FEATURES - Print, copy and scan in color, plus mobile and wireless printing.. ACTIVATE HP+ AND INSTANT INK AT PRINTER SETUP - Once HP+ is activated, your printer must be connected to the internet and requires Original HP Ink Cartridges to operate for the life of the printer. HP SMART APP - Print, copy and scan from your phone-from anywhere. EASY SETUP - Get started fast with easy printer setup that guides you step by step. WORRY-FREE WIRELESS - Get better range and more reliable connections using dual-band Wi-Fi with self-reset.",
+    "images": [
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/1E4-0015-00AD5-V01.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/1E4-0015-00AD5-V05.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/1E4-0015-00AD5-V02.jpg"
+    ],
+    "stock": 100,
+    "categories": ["Printers", "Deskjet Printers"]
+  },
+  {
+    "title": "HP DeskJet 2755e Printer",
+    "name": "HP DeskJet 2755e All-in-One Wireless Color Printer, with bonus 6 months free Instant Ink with HP+ (26K67A)",
+    "price": 79.99,
+    "shippingCost": 10.55,
+    "description": "BEST FOR BASIC PRINTING - Print basic color documents like recipes, forms and travel documents.. KEY FEATURES - Print, copy and scan in color, plus mobile and wireless printing.. ACTIVATE HP+ AND INSTANT INK AT PRINTER SETUP - Once HP+ is activated, your printer must be connected to the internet and requires Original HP Ink Cartridges to operate for the life of the printer. HP SMART APP - Print, copy and scan from your phone-from anywhere. EASY SETUP - Get started fast with easy printer setup that guides you step by step. WORRY-FREE WIRELESS - Get better range and more reliable connections using dual-band Wi-Fi with self-reset.",
+    "images": [
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/1E4-0015-00AD5-V01.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/1E4-0015-00AD5-V05.jpg",
+      "https://c1.neweggimages.com/ProductImageCompressAll1280/1E4-0015-00AD5-V02.jpg"
+    ],
+    "stock": 100,
+    "categories": ["Printers", "Deskjet Printers"]
   },
   {
     "title": "HP DeskJet 2755e Printer",
