@@ -5,6 +5,8 @@ const authLogin = require("../controllers/user/authLogin.js");
 const { Token } = require("../database.js");
 const generateAccessToken = require("../controllers/user/utils/generateAccessToken.js");
 const verifyEmail = require("../controllers/user/utils/verifyEmail.js");
+const authToken = require("./middlewares/authToken.js");
+const getUser = require("../controllers/user/getUser.js");
 
 //crear nuevo usuario
 router.post("", async function (req, res) {
@@ -70,6 +72,12 @@ router.post("/token", async function (req, res) {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.get("", authToken, async function (req, res) {
+  const rawUser = req.user.user;
+  const user = await getUser(rawUser.id);
+  res.send(user);
 });
 
 module.exports = router;
