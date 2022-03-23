@@ -4,6 +4,7 @@ const countPages = require("../controllers/products/utils/countPages.js");
 const filterCompose = require("../controllers/products/utils/filterCompose.js");
 const orderCompose = require("../controllers/products/utils/orderCompose.js");
 const paginationCompose = require("../controllers/products/utils/paginationCompose.js");
+const createProduct = require("../controllers/products/createProduct.js");
 
 router.get("", async function (req, res) {
   const { search, minPrice, maxPrice, freeShipping, categoryId, order, limit, offset } =
@@ -29,5 +30,12 @@ router.get("", async function (req, res) {
     page: offset ? Number(offset) : 1,
   });
 });
+
+router.post("/", async (req, res)=>{
+  
+  const creado = await createProduct(req.body)
+  res.send(creado);
+})
+
 
 module.exports = router;

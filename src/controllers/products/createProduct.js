@@ -23,6 +23,7 @@ const createProduct = async (data) => {
   });
   await createAndAddImages(images, newProduct);
   await createAndAddCategories(categories, newProduct);
+  return newProduct;
 };
 
 module.exports = createProduct;
