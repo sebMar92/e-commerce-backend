@@ -69,11 +69,11 @@ const {
   Order,
 } = sequelize.models;
 
-User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });
-Product.belongsToMany(User, { through: "Wishlist" });
+// User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });
+// Product.belongsToMany(User, { through: "Wishlist" });
 
-User.belongsToMany(Product, { through: "ShoppingCart", as: "shoppingProduct" });
-Product.belongsToMany(User, { through: "ShoppingCart" });
+// User.belongsToMany(Product, { through: "ShoppingCart", as: "shoppingProduct" });
+// Product.belongsToMany(User, { through: "ShoppingCart" });
 
 User.hasMany(Direction);
 
