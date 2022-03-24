@@ -7,6 +7,9 @@ const generateAccessToken = require("../controllers/user/utils/generateAccessTok
 const verifyEmail = require("../controllers/user/utils/verifyEmail.js");
 const authToken = require("./middlewares/authToken.js");
 const getUser = require("../controllers/user/getUser.js");
+const editUser = require("../controllers/user/editUser.js");
+const deleteUser = require("../controllers/user/deleteUser.js");
+const deleteDirection = require("../controllers/direction/deleteDirection.js");
 
 //crear nuevo usuario
 router.post("", async function (req, res) {
@@ -78,6 +81,28 @@ router.get("", authToken, async function (req, res) {
   const rawUser = req.user.user;
   const user = await getUser(rawUser.id);
   res.send(user);
+});
+
+router.put("", authToken, async function (req, res) {
+  const user = req.user.user;
+  const editedUser = await editUser(req.body, user.id);
+  res.send(editedUser);
+});
+router.delete("", authToken, async function (req, res) {
+  const user = req.user.user;
+  const deletedUser = await deleteUser(user.id);
+  if (deletedUser) {
+    return res.send({ msg: "user deleted" });
+  }
+  res.send({ error: "couldn't delete user" });
+});
+router.delete("/direction", authToken, async function (req, res) {
+  const { id } = req.body;
+  const deletedDirection = await deleteDirection(id, req.user.user.id);
+  if (deletedDirection) {
+    return res.send({ msg: "direction deleted" });
+  }
+  res.send({ error: "couldn't delete direction" });
 });
 
 module.exports = router;
