@@ -1,12 +1,12 @@
 const { Direction } = require("../../database.js");
 
-const deleteDirection = async (id) => {
+const deleteDirection = async (id, userId) => {
   try {
     const direction = await Direction.findOne({
-      where: { id: id },
+      where: { id: id, userId: userId },
     });
     if (direction) {
-      await Direction.destroy({ where: { id: id } });
+      await Direction.destroy({ where: { id: id, userId: userId } });
       return true;
     }
     return false;

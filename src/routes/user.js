@@ -98,7 +98,7 @@ router.delete("", authToken, async function (req, res) {
 });
 router.delete("/direction", authToken, async function (req, res) {
   const { id } = req.body;
-  const deletedDirection = await deleteDirection(id);
+  const deletedDirection = await deleteDirection(id, req.user.user.id);
   if (deletedDirection) {
     return res.send({ msg: "direction deleted" });
   }
