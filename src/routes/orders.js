@@ -8,6 +8,7 @@ const authToken = require("./middlewares/authToken.js");
 router.post("", authToken, async function (req, res) {
   const { status, amount, productId } = req.body;
   const user = req.user.user;
+  
 
   const created = await createOrder(status, amount, user, productId);
   if (created) {
@@ -19,8 +20,9 @@ router.post("", authToken, async function (req, res) {
 router.get("", authToken, async function (req, res) {
   const user = req.user.user;
   const { status } = req.body;
-
+console.log("get")
   const cart = await getProductsWithOrders(user, status);
+  console.log(cart)
   if (cart) {
     return res.send(cart);
   }
