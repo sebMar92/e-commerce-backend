@@ -18,7 +18,7 @@ router.post("", authToken, async function (req, res) {
 // trae las ordenes con el status pedido (para traer el carro de compras, la wishlist, historial, etc)
 router.get("", authToken, async function (req, res) {
   const user = req.user.user;
-  const { status } = req.body;
+  const { status } = req.query;
 
   const cart = await getProductsWithOrders(user, status);
   if (cart) {
