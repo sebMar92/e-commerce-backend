@@ -9,9 +9,13 @@ const getUser = async (id) => {
       where: { userId: id },
       attributes: ["id", "city", "postalCode", "street", "streetNumber", "floor", "unit"],
     });
+    if(user){
     const simpleUser = user.toJSON();
     simpleUser.directions = directions;
-    return simpleUser;
+    return simpleUser
+  }else{
+      return {error: "user doesn't exist"}
+    }
   } catch (err) {
     console.log(err);
     return { error: "user doesn't exist" };
