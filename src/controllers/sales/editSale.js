@@ -5,6 +5,7 @@ const editSale = async (salesData) => {
   try {
     await deleteSale(salesData.id);
     await createAndAddSale(salesData);
+
     return true;
   } catch (err) {
     console.log(err);

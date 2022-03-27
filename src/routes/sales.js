@@ -22,8 +22,8 @@ router.put('', authToken, async function (req, res) {
 });
 
 router.delete('', authToken, async function (req, res) {
-  const { id } = req.body;
-  const didDelete = deleteSale(id);
+  const { saleId } = req.query;
+  const didDelete = deleteSale(saleId);
   if (didDelete) {
     return res.send({ msg: 'sale deleted' });
   }
