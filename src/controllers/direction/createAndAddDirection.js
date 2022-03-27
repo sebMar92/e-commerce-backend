@@ -1,4 +1,4 @@
-const { Direction, User } = require("../../database.js");
+const { Direction, User } = require('../../database.js');
 
 const createAndAddDirection = async (direction, user) => {
   try {
@@ -11,9 +11,11 @@ const createAndAddDirection = async (direction, user) => {
       floor: floor,
       unit: unit,
     });
-    user.addDirection(newDirection);
+    await user.addDirection(newDirection);
+    return true;
   } catch (err) {
     console.log(err);
+    return false;
   }
 };
 
