@@ -1,14 +1,15 @@
-const { Order } = require("../../database.js");
+const { Order } = require('../../database.js');
 
 const changeOrderStatus = async (orderId, status) => {
   const order = await Order.findOne({ where: { id: orderId } });
+
   if (
     order &&
     order.status !== status &&
-    (status === "inWishList" ||
-      status === "inCart" ||
-      status === "pending" ||
-      status === "finished")
+    (status === 'inWishList' ||
+      status === 'inCart' ||
+      status === 'pending' ||
+      status === 'finished')
   ) {
     const orderWithThatStatus = await Order.findOne({
       where: { userId: order.userId, productId: order.productId, status: status },
@@ -21,6 +22,7 @@ const changeOrderStatus = async (orderId, status) => {
     }
     order.status = status;
     await order.save();
+    console.log('status cambiado');
     return true;
   }
   return false;
