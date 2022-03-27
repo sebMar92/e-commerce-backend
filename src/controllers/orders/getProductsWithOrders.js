@@ -1,4 +1,4 @@
-const { Order, Product } = require("../../database.js");
+const { Order, Product, Image } = require("../../database.js");
 
 const getProductsWithOrders = async (user, status) => {
   const inCartProducts = await Product.findAll({
@@ -9,6 +9,11 @@ const getProductsWithOrders = async (user, status) => {
         where: { userId: user.id, status: status },
         as: "orders",
         attributes: ["id", "amount"],
+      },
+      {
+        model: Image,
+        as: "images",
+        attributes: ["url", "altText"],
       },
     ],
   });

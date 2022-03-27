@@ -18,7 +18,7 @@ router.post("", authToken, async function (req, res) {
 // trae las ordenes con el status pedido (para traer el carro de compras, la wishlist, historial, etc)
 router.get("", authToken, async function (req, res) {
   const user = req.user.user;
-  const { status } = req.body;
+  const { status } = req.query;
 
   const cart = await getProductsWithOrders(user, status);
   if (cart) {
@@ -30,14 +30,17 @@ router.get("", authToken, async function (req, res) {
 //modificar cantidad de la orden
 router.put("/:id", authToken, async function (req, res) {
   const { status, amount } = req.body;
-  const { id } = req.query;
+  const { id } = req.params;
   if (status) {
     const orderChanged = await changeOrderStatus(id, status);
     if (orderChanged) {
       return res.send({ msg: "status changed" });
     }
   } else if (amount) {
+    console.log(amount)
+    console.log(id)
     const orderChanged = await changeOrderAmount(id, amount);
+    
     if (orderChanged) {
       return res.send({ msg: "amount changed" });
     }
@@ -47,9 +50,9 @@ router.put("/:id", authToken, async function (req, res) {
 });
 // borrar order (quitar de wishlist, quitar de carrito, cancelar compra)
 router.delete("/:id", authToken, async function (req, res) {
-  const { id } = req.query;
-
-  const orderDeleted = await changeOrderStatus(id);
+  const { id } = req.params;
+  const {status} = req.params;
+  const orderDeleted = await changeOrderStatus(id, status);
   if (orderDeleted) {
     return res.send({ msg: "order deleted" });
   }
