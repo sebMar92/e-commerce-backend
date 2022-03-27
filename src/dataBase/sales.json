@@ -4,6 +4,7 @@
     "percentage": 10,
     "day": "thursday",
     "productAmount": 0,
+    "image": "https://www.freeiconspng.com/uploads/flying-stacks-money-hd-transparent-4.png",
     "category": 0,
     "product": 0
   },
@@ -12,6 +13,7 @@
     "percentage": 100,
     "day": "all",
     "productAmount": 2,
+    "image": "https://cdn.mos.cms.futurecdn.net/m3XrwcaHT4eXuHHuKpsMDF-1200-80.jpg",
     "category": 6,
     "product": 0
   },
@@ -19,6 +21,7 @@
     "description": "Sunday combo: 40% discount on your second keyboard.",
     "percentage": 40,
     "day": "sunday",
+    "image": "https://img.freepik.com/free-vector/red-sale-price-tag-style-banner-design-template_1017-27328.jpg",
     "productAmount": 1,
     "category": 5,
     "product": 0
@@ -27,6 +30,7 @@
     "description": "Surpirse sale, get 25% off if you buy this item today!",
     "percentage": 25,
     "day": "monday",
+    "image": "https://images.mediotiempo.com/_oPFx4vbfkYQRQdANL3Oi80c5eQ=/958x596/uploads/media/2021/05/13/hot-sale-epocas-mayores-descuentos_0_227_1200_746.jpg",
     "productAmount": 0,
     "category": 0,
     "product": 15
