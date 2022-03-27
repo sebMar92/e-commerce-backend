@@ -1,7 +1,7 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define("sale", {
+  sequelize.define('sale', {
     description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -12,22 +12,26 @@ module.exports = (sequelize) => {
     },
     day: {
       type: DataTypes.ENUM(
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday",
-        "all"
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        'all'
       ),
       allowNull: false,
-      defaultValue: "all",
+      defaultValue: 'all',
     },
     productAmount: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     global: {
       type: DataTypes.BOOLEAN,

@@ -1,13 +1,16 @@
-const { Sale } = require("../../database.js");
+const { Sale } = require('../../database.js');
 
 const createAndAddSale = async (salesData) => {
   try {
-    const { description, percentage, day, productAmount, category, product } = salesData;
+    const { description, percentage, day, productAmount, category, product, image, id } =
+      salesData;
     const newSale = await Sale.create({
       description,
       percentage,
       day,
       productAmount,
+      image,
+      id,
     });
     if (category === 0 && product === 0) {
       newSale.global = true;
