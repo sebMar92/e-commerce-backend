@@ -11,7 +11,16 @@ const getProducts = async (
       ...whereStatement,
       ...orderDisposition,
       ...paginationSettings,
-      attributes: ['title', 'name', 'id', 'price', 'shippingCost', 'description'],
+      attributes: [
+        'title',
+        'name',
+        'id',
+        'price',
+        'shippingCost',
+        'description',
+        'stock',
+      ],
+
       include: [
         {
           model: Sale,
