@@ -1,4 +1,4 @@
-const { Product, Image, Category, Sale } = require("../../database.js");
+const { Product, Image, Category, Sale } = require('../../database.js');
 
 const getProducts = async (
   orderDisposition,
@@ -11,24 +11,33 @@ const getProducts = async (
       ...whereStatement,
       ...orderDisposition,
       ...paginationSettings,
-      attributes: ["title", "id", "price", "shippingCost", "description", "stock"],
+      attributes: [
+        'title',
+        'name',
+        'id',
+        'price',
+        'shippingCost',
+        'description',
+        'stock',
+      ],
+
       include: [
         {
           model: Sale,
-          attributes: ["percentage", "day", "productAmount", "id"],
+          attributes: ['percentage', 'day', 'productAmount', 'id'],
           through: {
             attributes: [],
           },
         },
         {
           model: Image,
-          as: "images",
-          attributes: ["url", "altText"],
+          as: 'images',
+          attributes: ['url', 'altText'],
         },
         {
           model: Category,
-          as: "categories",
-          attributes: ["name", "id"],
+          as: 'categories',
+          attributes: ['name', 'id'],
           ...categoryWhereStatement,
           through: {
             attributes: [],
@@ -36,7 +45,7 @@ const getProducts = async (
           include: [
             {
               model: Sale,
-              attributes: ["percentage", "day", "productAmount", "id"],
+              attributes: ['percentage', 'day', 'productAmount', 'id'],
               through: {
                 attributes: [],
               },
