@@ -3,9 +3,9 @@
     "firstName": "Sebastián",
     "lastName": "Martínez",
     "password": "sarasa2000",
-    "profilePicture": "https://cdn.pixabay.com/photo/2020/06/23/09/56/glass-5332057_960_720.jpg",
+    "profilePicture": "https://wallpapercave.com/wp/wp5461627.jpg",
     "email": "mail@mail.com",
-    "rol": "user",
+    "rol": "admin",
     "newsletterSubscription": false,
     "direction": {
       "city": "San Nicolas",
