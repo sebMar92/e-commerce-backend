@@ -7,6 +7,7 @@ const paginationCompose = require('../controllers/products/utils/paginationCompo
 const { Sale } = require('../database.js');
 const createProduct = require('../controllers/products/createProduct.js');
 const authToken = require('./middlewares/authToken.js');
+const editProduct = require('../controllers/products/editProduct.js');
 
 router.get('', async function (req, res) {
   const { search, minPrice, maxPrice, freeShipping, categoryId, order, limit, offset } =
@@ -42,6 +43,15 @@ router.post('/', authToken, async (req, res) => {
   if (req.user.user.rol === 'admin') {
     const creado = await createProduct(req.body);
     return res.send(creado);
+  } else {
+    return res.status(403).send({ error: "You don't have permision to do this." });
+  }
+});
+
+router.put('/:id', authToken, async (req, res) => {
+  if (req.user.user.rol === 'admin') {
+    const edited = editProduct(req.body, req.params.id);
+    return res.send(edited);
   } else {
     return res.status(403).send({ error: "You don't have permision to do this." });
   }

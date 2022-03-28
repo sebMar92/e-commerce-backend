@@ -1,4 +1,4 @@
-const { Order } = require('../../database.js');
+const { Order, Product } = require('../../database.js');
 
 const changeOrderStatus = async (orderId, status) => {
   const order = await Order.findOne({ where: { id: orderId } });
@@ -11,6 +11,15 @@ const changeOrderStatus = async (orderId, status) => {
       status === 'pending' ||
       status === 'finished')
   ) {
+    if (status === 'finished') {
+      const productToBuy = await Product.findOne({ where: { id: order.productId } });
+      if (productToBuy && productToBuy.stock < order.amount) {
+        return { error: "There's not enough stock." };
+      } else {
+        productToBuy.stock = productToBuy.stock - order.amount;
+        productToBuy.save();
+      }
+    }
     const orderWithThatStatus = await Order.findOne({
       where: { userId: order.userId, productId: order.productId, status: status },
     });
@@ -22,7 +31,6 @@ const changeOrderStatus = async (orderId, status) => {
     }
     order.status = status;
     await order.save();
-    console.log('status cambiado');
     return true;
   }
   return false;
