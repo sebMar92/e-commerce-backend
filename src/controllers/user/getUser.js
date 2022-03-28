@@ -9,6 +9,7 @@ const getUser = async (id) => {
       where: { userId: id },
       attributes: ["id", "city", "postalCode", "street", "streetNumber", "floor", "unit"],
     });
+    console.log(directions)
     if(user){
     const simpleUser = user.toJSON();
     simpleUser.directions = directions;

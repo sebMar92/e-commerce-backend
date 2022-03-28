@@ -11,7 +11,9 @@ router.post('', authToken, async function (req, res) {
   const user = req.user.user;
 
   const created = await createOrder(status, amount, user, productId);
-  if (created) {
+  if (typeof created !== 'boolean') {
+    return res.send(created);
+  } else if (created) {
     return res.send({ msg: 'order created' });
   }
   return res.send({ error: "couldn't create order" });
@@ -34,12 +36,16 @@ router.put('/:id', authToken, async function (req, res) {
   const { id } = req.params;
   if (status) {
     const orderChanged = await changeOrderStatus(id, status);
-    if (orderChanged) {
+    if (typeof orderChanged !== 'boolean') {
+      return res.send(orderChanged);
+    } else if (orderChanged) {
       return res.send({ msg: 'status changed' });
     }
   } else if (amount) {
     const orderChanged = await changeOrderAmount(id, amount);
-    if (orderChanged) {
+    if (typeof orderChanged !== 'boolean') {
+      return res.send(orderChanged);
+    } else if (orderChanged) {
       return res.send({ msg: 'amount changed' });
     }
   }

@@ -106,8 +106,8 @@ router.get('/direction', authToken, async function (req, res) {
 });
 //crea dirección para usuario
 router.post('/direction', authToken, async function (req, res) {
-  const user = await User.findOne({ where: { id: req.user.user.id } });
-  const newDirection = await createAndAddDirection(req.body, user);
+  
+  const newDirection = await createAndAddDirection(req.body, req.user.user);
   if (newDirection) {
     return res.send({ msg: 'direction created' });
   }
