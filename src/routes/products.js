@@ -49,7 +49,6 @@ router.post('/', authToken, async (req, res) => {
 });
 
 router.put('/:id', authToken, async (req, res) => {
-
   if (req.user.user.rol === 'admin') {
     const edited = editProduct(req.body, req.params.id);
     return res.send(edited);
@@ -59,4 +58,3 @@ router.put('/:id', authToken, async (req, res) => {
 });
 
 module.exports = router;
-
