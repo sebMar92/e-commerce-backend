@@ -1,12 +1,18 @@
-require("dotenv").config();
-const { Sequelize } = require("sequelize");
-const fs = require("fs");
-const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DATABASE_URL } = process.env;
+require('dotenv').config();
+const { Sequelize } = require('sequelize');
+const fs = require('fs');
+const path = require('path');
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 let sequelize =
-  process.env.NODE_ENV === "production"
-    ? new Sequelize(DATABASE_URL, {
+  process.env.NODE_ENV === 'production'
+    ? new Sequelize({
+        database: DB_NAME,
+        dialect: 'postgres',
+        host: DB_HOST,
+        port: 5432,
+        username: DB_USER,
+        password: DB_PASSWORD,
         pool: {
           max: 3,
           min: 1,
@@ -21,25 +27,21 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`,
-        {
-          logging: false, // set to console.log to see the raw SQL queries
-          native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-        }
-      );
+    : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+        logging: false, // set to console.log to see the raw SQL queries
+        native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+      });
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
-fs.readdirSync(path.join(__dirname, "/models"))
+fs.readdirSync(path.join(__dirname, '/models'))
   .filter(
-    (file) =>
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+    (file) => file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
   )
   .forEach((file) => {
-    modelDefiners.push(require(path.join(__dirname, "/models", file)));
+    modelDefiners.push(require(path.join(__dirname, '/models', file)));
   });
 
 // Injectamos la conexion (sequelize) a todos los modelos
@@ -78,14 +80,14 @@ User.hasMany(Direction);
 User.hasMany(Order);
 Product.hasMany(Order);
 
-Category.belongsToMany(Product, { through: "Category_Product" });
-Product.belongsToMany(Category, { through: "Category_Product" });
+Category.belongsToMany(Product, { through: 'Category_Product' });
+Product.belongsToMany(Category, { through: 'Category_Product' });
 
-Sale.belongsToMany(Product, { through: "Sale_Product" });
-Product.belongsToMany(Sale, { through: "Sale_Product" });
+Sale.belongsToMany(Product, { through: 'Sale_Product' });
+Product.belongsToMany(Sale, { through: 'Sale_Product' });
 
-Sale.belongsToMany(Category, { through: "Sale_Category" });
-Category.belongsToMany(Sale, { through: "Sale_Category" });
+Sale.belongsToMany(Category, { through: 'Sale_Category' });
+Category.belongsToMany(Sale, { through: 'Sale_Category' });
 
 User.hasMany(Comment);
 Product.hasMany(Comment);
