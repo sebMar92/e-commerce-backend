@@ -1,4 +1,4 @@
-const { Order } = require("../../database.js");
+const { Order } = require('../../database.js');
 
 const deleteOrder = async (orderId) => {
   const order = await Order.findOne({ where: { id: orderId } });

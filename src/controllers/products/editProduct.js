@@ -28,4 +28,3 @@ const editProduct = async (data, id) => {
 };
 
 module.exports = editProduct;
-
