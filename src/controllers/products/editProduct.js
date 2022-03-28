@@ -5,10 +5,12 @@ const createAndAddCategories = require('../category/createAndAddCategory.js');
 const editProduct = async (data, id) => {
   const { title, name, price, shippingCost, stock, description, images, categories } =
     data;
-  const foundProduct = await Product.findOne({ where: { id: id } });
+
+  const foundProduct = Product.find({ where: { id: id } });
 
   if (foundProduct) {
-    
+    foundProduct.toJSON();
+
     foundProduct.title = title;
     foundProduct.name = name;
     foundProduct.price = price;
@@ -17,12 +19,13 @@ const editProduct = async (data, id) => {
     foundProduct.description = description;
     foundProduct.save();
   }
-  await foundProduct.setCategories([]);
-  await foundProduct.setImages([]);
+
+  await foundProduct.removeCategories();
+  await foundProduct.removeImages();
   await createAndAddImages(images, foundProduct);
   await createAndAddCategories(categories, foundProduct);
-  foundProduct.save();
   return foundProduct;
 };
 
 module.exports = editProduct;
+
