@@ -49,7 +49,6 @@ router.put('/:id', authToken, async function (req, res) {
 // borrar order (quitar de wishlist, quitar de carrito, cancelar compra)
 router.delete('/:id', authToken, async function (req, res) {
   const { id } = req.params;
-
   const orderDeleted = await deleteOrder(id);
   if (orderDeleted) {
     return res.send({ msg: 'order deleted' });
