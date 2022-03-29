@@ -1,4 +1,4 @@
-const { Direction } = require("../../database.js");
+const { Direction } = require('../../database.js');
 
 const editDirection = async (data) => {
   try {
