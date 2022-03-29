@@ -8,6 +8,7 @@ const users = require("./user.js");
 const orders = require("./orders.js");
 const sales = require("./sales.js");
 const comments = require("./comments.js");
+const emails = require("./emails.js");
 const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/ruta', ruta);
@@ -18,5 +19,6 @@ router.use("/user", users);
 router.use("/order", orders);
 router.use("/sale", sales);
 router.use("/comment", comments);
+router.use("/emails", emails);
 
 module.exports = router;
