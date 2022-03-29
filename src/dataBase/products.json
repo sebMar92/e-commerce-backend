@@ -56,6 +56,8 @@
     "stock": 100,
     "categories": ["Computers", "Pc Desktop", "Gaming"]
   },
+
+  
   {
     "title": "SkyTech Archangel 3.0 Gaming Computer",
     "name": "SkyTech Archangel 3.0 Gaming Computer PC Desktop - Ryzen 5 3600 6-Core 3.6GHz, RTX 3060 12GB, 1TB SSD, 16GB DDR4 3200, RGB Fans, AC WiFi, 600W Gold PSU, Windows 10 Home 64-bit, White ",
@@ -488,48 +490,7 @@
     "stock": 100,
     "categories": ["HDD", "Components"]
   },
-  {
-    "title": "HP LaserJet Pro M404dn",
-    "name": "HP LaserJet Pro M404dn Auto Duplex Monochrome Laser Printer",
-    "price": 369.0,
-    "shippingCost": 55.78,
-    "description": "Model #: W1A53A (Replaces m402dn C5F94A / m402dne C5J91A). Print up to 40 ppm Auto Duplex Printing HP FastRes1200 (Enhanced up to 4800 x 600 dpi) Black Print Quality. Gigabit Ethernet 10/100/1000BASE-T network Up to 80,000 pages monthly. 256 MB DRAM; 256 MB Flash Memory, Uses HP 58A Standard Yield (CF258A) or 58X High Yield (CF258X) Black Original LaserJet Toner Cartridges",
-    "images": [
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V80.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V03.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V04.jpg"
-    ],
-    "stock": 100,
-    "categories": ["Printers", "Laser Printers"]
-  },
-  {
-    "title": "HP LaserJet Pro M404dn",
-    "name": "HP LaserJet Pro M404dn Auto Duplex Monochrome Laser Printer",
-    "price": 369.0,
-    "shippingCost": 55.78,
-    "description": "Model #: W1A53A (Replaces m402dn C5F94A / m402dne C5J91A). Print up to 40 ppm Auto Duplex Printing HP FastRes1200 (Enhanced up to 4800 x 600 dpi) Black Print Quality. Gigabit Ethernet 10/100/1000BASE-T network Up to 80,000 pages monthly. 256 MB DRAM; 256 MB Flash Memory, Uses HP 58A Standard Yield (CF258A) or 58X High Yield (CF258X) Black Original LaserJet Toner Cartridges",
-    "images": [
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V80.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V03.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V04.jpg"
-    ],
-    "stock": 100,
-    "categories": ["Printers", "Laser Printers"]
-  },
-  {
-    "title": "HP LaserJet Pro M404dn",
-    "name": "HP LaserJet Pro M404dn Auto Duplex Monochrome Laser Printer",
-    "price": 369.0,
-    "shippingCost": 55.78,
-    "description": "Model #: W1A53A (Replaces m402dn C5F94A / m402dne C5J91A). Print up to 40 ppm Auto Duplex Printing HP FastRes1200 (Enhanced up to 4800 x 600 dpi) Black Print Quality. Gigabit Ethernet 10/100/1000BASE-T network Up to 80,000 pages monthly. 256 MB DRAM; 256 MB Flash Memory, Uses HP 58A Standard Yield (CF258A) or 58X High Yield (CF258X) Black Original LaserJet Toner Cartridges",
-    "images": [
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V80.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V03.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll1280/28-413-593-V04.jpg"
-    ],
-    "stock": 100,
-    "categories": ["Printers", "Laser Printers"]
-  },
+  
   {
     "title": "Canon imageCLASS LBP6230dw",
     "name": "Canon imageCLASS LBP6230dw wireless Monochrome laser printer with Duplex printing, 26 ppm",
