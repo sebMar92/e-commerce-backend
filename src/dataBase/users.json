@@ -1,0 +1,36 @@
+[
+  {
+    "firstName": "Sebastián",
+    "lastName": "Martínez",
+    "password": "sarasa2000",
+    "profilePicture": "https://wallpapercave.com/wp/wp5461627.jpg",
+    "email": "mail@mail.com",
+    "rol": "admin",
+    "newsletterSubscription": false,
+    "direction": {
+      "city": "San Nicolas",
+      "postalCode": 2900,
+      "street": "Calle",
+      "streetNumber": 123,
+      "floor": "2",
+      "unit": "B"
+    }
+  },
+  {
+    "firstName": "User",
+    "lastName": "Fake",
+    "password": "password123",
+    "profilePicture": "https://cdn.pixabay.com/photo/2015/03/26/23/09/cake-pops-693645_960_720.jpg",
+    "email": "fake_mail@mail.com",
+    "rol": "user",
+    "newsletterSubscription": true,
+    "direction": {
+      "city": "City",
+      "postalCode": 1000,
+      "street": "Calle",
+      "streetNumber": 123,
+      "floor": "3",
+      "unit": "C"
+    }
+  }
+]
