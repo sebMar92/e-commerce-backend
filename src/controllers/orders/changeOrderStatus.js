@@ -1,6 +1,7 @@
 const { Order, Product } = require('../../database.js');
+const createOrder = require('./createOrder.js');
 
-const changeOrderStatus = async (orderId, status) => {
+const changeOrderStatus = async (orderId, status, user) => {
   const order = await Order.findOne({ where: { id: orderId } });
 
   if (
@@ -27,6 +28,10 @@ const changeOrderStatus = async (orderId, status) => {
       orderWithThatStatus.amount = orderWithThatStatus.amount + order.amount;
       await orderWithThatStatus.save();
       await Order.destroy({ where: { id: order.id } });
+      return true;
+    }
+    if (order.status === 'inWishList') {
+      await createOrder(status, 1, user, order.productId);
       return true;
     }
     order.status = status;

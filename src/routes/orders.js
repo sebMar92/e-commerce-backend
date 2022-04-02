@@ -35,7 +35,7 @@ router.put('/:id', authToken, async function (req, res) {
   const { status, amount } = req.query;
   const { id } = req.params;
   if (status) {
-    const orderChanged = await changeOrderStatus(id, status);
+    const orderChanged = await changeOrderStatus(id, status, req.user.user);
     if (typeof orderChanged !== 'boolean') {
       return res.send(orderChanged);
     } else if (orderChanged) {

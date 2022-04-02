@@ -1,11 +1,9 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('order', {
+  sequelize.define('bulkorder', {
     status: {
       type: DataTypes.ENUM(
-        'inWishList',
-        'inCart',
         'pending',
         'finished',
         'preparing',
@@ -13,11 +11,6 @@ module.exports = (sequelize) => {
         'delivered',
         'cancelled'
       ),
-      allowNull: false,
-    },
-    amount: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
       allowNull: false,
     },
     purchaseDate: {

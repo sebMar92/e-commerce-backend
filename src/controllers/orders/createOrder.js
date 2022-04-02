@@ -4,7 +4,7 @@ const createOrder = async (status, amount, user, productId) => {
   const foundUser = await User.findOne({ where: { id: user.id } });
   const foundProduct = await Product.findOne({ where: { id: productId } });
   if (foundUser && foundProduct) {
-    if (status === 'finished') {
+    if (status === 'finished' || status === 'pending') {
       if (foundProduct.stock < amount) {
         return { error: "There's not enough stock." };
       }
