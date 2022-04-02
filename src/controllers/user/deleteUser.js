@@ -1,13 +1,13 @@
 const { User } = require("../../database.js");
 
-const deleteUser = async (id, userId) => {
+const deleteUser = async (id) => {
   try {
-    console.log(id, userId);
+    
     const user = await User.findOne({
-      where: { id: id, userId: userId },
+      where: { id: id },
     });
     if (user) {
-      await User.destroy({ where: { id: id, userId: userId } });
+      await User.destroy({ where: { id: id} });
       return true;
     }
     return false;
