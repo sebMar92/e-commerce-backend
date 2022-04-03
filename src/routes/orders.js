@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const changeBulkOrderStatus = require('../controllers/bulkOrders/changeBulkOrderStatus.js');
 const createBulkOrder = require('../controllers/bulkOrders/createBulkOrder.js');
+const deleteBulkOrder = require('../controllers/bulkOrders/deleteBulkOrder.js');
 const getBulkOrders = require('../controllers/bulkOrders/getBulkOrders.js');
 const changeOrderAmount = require('../controllers/orders/changeOrderAmount.js');
 const changeOrderStatus = require('../controllers/orders/changeOrderStatus.js');
@@ -106,5 +107,13 @@ router.put('/bulk/:bulkId', authToken, async function (req, res) {
   }
   return res.send({ error: "couldn't edit bulk order" });
 });
+router.delete('/bulk/:bulkId', authToken, async function (req, res) {
+  const { bulkId } = req.params;
 
+  const orderDeleted = await deleteBulkOrder(bulkId);
+  if (orderDeleted) {
+    return res.send({ msg: 'bulkorder deleted' });
+  }
+  return res.send({ error: "couldn't find bulkorder" });
+});
 module.exports = router;
