@@ -1,7 +1,7 @@
 const { Order, Product } = require('../../database.js');
 const createOrder = require('./createOrder.js');
 
-const changeOrderStatus = async (orderId, status, user, date) => {
+const changeOrderStatus = async (orderId, status, user, date, purchaseId) => {
   try {
     const order = await Order.findOne({ where: { id: orderId } });
     if (
@@ -25,6 +25,7 @@ const changeOrderStatus = async (orderId, status, user, date) => {
           productToBuy.save();
           order.serverPurchaseDate = Date();
           order.localPurchaseDate = date;
+          order.purchaseId = purchaseId;
           order.status = status;
           await order.save();
           return true;
