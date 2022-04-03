@@ -1,0 +1,28 @@
+[
+  {
+    "status": "pending",
+    "amount": 1,
+    "productId": 1
+  },
+  {
+    "status": "pending",
+    "amount": 2,
+    "productId": 2
+  },
+  {
+    "status": "pending",
+
+    "amount": 3,
+    "productId": 3
+  },
+  {
+    "status": "pending",
+    "amount": 4,
+    "productId": 4
+  },
+  {
+    "status": "pending",
+    "amount": 5,
+    "productId": 5
+  }
+]

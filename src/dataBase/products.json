@@ -10,7 +10,7 @@
       "https://m.media-amazon.com/images/I/6126hV4idnS._AC_SL1500_.jpg",
       "https://m.media-amazon.com/images/I/61Rq2wgIXhL._AC_SL1500_.jpg"
     ],
-    "stock": 0,
+    "stock": 5,
     "categories": ["Computers", "Pc Desktop"]
   },
   {
@@ -57,7 +57,6 @@
     "categories": ["Computers", "Pc Desktop", "Gaming"]
   },
 
-  
   {
     "title": "SkyTech Archangel 3.0 Gaming Computer",
     "name": "SkyTech Archangel 3.0 Gaming Computer PC Desktop - Ryzen 5 3600 6-Core 3.6GHz, RTX 3060 12GB, 1TB SSD, 16GB DDR4 3200, RGB Fans, AC WiFi, 600W Gold PSU, Windows 10 Home 64-bit, White ",
@@ -490,7 +489,7 @@
     "stock": 100,
     "categories": ["HDD", "Components"]
   },
-  
+
   {
     "title": "Canon imageCLASS LBP6230dw",
     "name": "Canon imageCLASS LBP6230dw wireless Monochrome laser printer with Duplex printing, 26 ppm",

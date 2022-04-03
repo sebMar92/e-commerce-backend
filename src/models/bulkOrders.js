@@ -13,16 +13,40 @@ module.exports = (sequelize) => {
       ),
       allowNull: false,
     },
-    purchaseDate: {
+    purchaseId: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    serverPurchaseDate: {
       type: DataTypes.DATE,
       allowNull: true,
     },
-    deliverDate: {
+    localPurchaseDate: {
       type: DataTypes.DATE,
       allowNull: true,
     },
-    cancelDate: {
+    serverDeliverDate: {
       type: DataTypes.DATE,
+      allowNull: true,
+    },
+    localDeliverDate: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    serverCancelDate: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    localCancelDate: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    combinedPrice: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+    },
+    combinedShippingCost: {
+      type: DataTypes.FLOAT,
       allowNull: true,
     },
   });
