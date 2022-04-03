@@ -98,6 +98,7 @@ router.put("", authToken, async function (req, res) {
 //borra usuario
 router.delete("", authToken, async function (req, res) {
   const user = req.user.user;
+
   const deletedUser = await deleteUser(user.id);
   if (deletedUser) {
     return res.send({ msg: "user deleted" });
