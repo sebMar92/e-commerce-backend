@@ -1,27 +1,31 @@
 [
   {
     "status": "pending",
+    "userId": 1,
     "amount": 1,
     "productId": 1
   },
   {
     "status": "pending",
+    "userId": 1,
     "amount": 2,
     "productId": 2
   },
   {
     "status": "pending",
-
+    "userId": 2,
     "amount": 3,
     "productId": 3
   },
   {
     "status": "pending",
+    "userId": 2,
     "amount": 4,
     "productId": 4
   },
   {
     "status": "pending",
+    "userId": 1,
     "amount": 5,
     "productId": 5
   }

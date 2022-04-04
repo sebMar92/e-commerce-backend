@@ -82,6 +82,8 @@ User.hasMany(Order);
 Product.hasMany(Order);
 Bulkorder.hasMany(Order);
 Order.belongsTo(Bulkorder);
+User.hasMany(Bulkorder);
+Bulkorder.belongsTo(User);
 
 Category.belongsToMany(Product, { through: 'Category_Product' });
 Product.belongsToMany(Category, { through: 'Category_Product' });
