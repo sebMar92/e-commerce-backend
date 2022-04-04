@@ -1,9 +1,9 @@
-const { Order, Bulkorder, Product } = require('../../database.js');
+const { Order, Bulkorder, Product, User } = require('../../database.js');
 const changeOrderStatus = require('../orders/changeOrderStatus.js');
 
 const createBulkOrder = async (data) => {
-  const { orderIds, user } = data;
   try {
+    const { orderIds, user } = data;
     if (orderIds) {
       const newBulk = await Bulkorder.create({ status: 'pending' });
       let fullPrice = 0;
@@ -25,7 +25,9 @@ const createBulkOrder = async (data) => {
       }
       newBulk.combinedPrice = fullPrice;
       newBulk.combinedShippingCost = fullShipping;
-      newBulk.save();
+      const foundUser = await User.findOne({ where: { id: user.id } });
+      await foundUser.addBulkorder(newBulk);
+      await newBulk.save();
       return newBulk;
     }
   } catch (err) {
