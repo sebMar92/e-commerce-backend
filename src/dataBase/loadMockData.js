@@ -22,7 +22,7 @@ const loadMockData = async () => {
     await createUser(u);
   }
   for await (const o of orders) {
-    await createOrder(o.status, o.amount, { id: 1 }, o.productId);
+    await createOrder(o.status, o.amount, { id: o.userId }, o.productId);
   }
   for await (const bo of bulkorders) {
     await createBulkOrder(bo);
