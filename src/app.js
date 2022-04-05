@@ -1,9 +1,13 @@
 const express = require('express');
 const routes = require('./routes/index.js');
 require('./database.js');
+const mercadopago = require('mercadopago');
+
+const { PROD_ACCESS_TOKEN } = process.env;
 
 const app = express();
 app.name = 'API';
+mercadopago.configurations.setAccessToken(PROD_ACCESS_TOKEN);
 // replacing bodyparser and cookieparser:
 app.use(express.json());
 app.use(
@@ -22,6 +26,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
+
 //routes
 app.use('/', routes);
 // Error catching endware.

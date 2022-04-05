@@ -95,11 +95,25 @@ router.put("", authToken, async function (req, res) {
   const editedUser = await editUser(req.body, user.id);
   res.send(editedUser);
 });
+
+router.put("/admin", authToken, async function (req, res) {
+  const user = req.body;
+  const editedUser = await editUser(user, user.id);
+  res.send(editedUser);
+});
 //borra usuario
 router.delete("", authToken, async function (req, res) {
   const user = req.user.user;
-
   const deletedUser = await deleteUser(user.id);
+  if (deletedUser) {
+    return res.send({ msg: "user deleted" });
+  }
+  res.send({ error: "couldn't delete user" });
+});
+
+router.delete("/admin", authToken, async function (req, res) {
+  const id = req.body.id;
+  const deletedUser = await deleteUser(id);
   if (deletedUser) {
     return res.send({ msg: "user deleted" });
   }
