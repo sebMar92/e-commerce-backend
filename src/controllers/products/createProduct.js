@@ -3,6 +3,7 @@ const createAndAddImages = require('../images/createAndAddImages.js');
 const createAndAddCategories = require('../category/createAndAddCategory.js');
 
 const createProduct = async (data) => {
+try {
   const { title, name, price, shippingCost, stock, description, images, categories } =
     data;
   const newProduct = await Product.create({
@@ -16,6 +17,9 @@ const createProduct = async (data) => {
   await createAndAddImages(images, newProduct);
   await createAndAddCategories(categories, newProduct);
   return newProduct;
+  } catch(err){
+    console.log(err);
+  }
 };
 
 module.exports = createProduct;

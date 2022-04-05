@@ -1,16 +1,20 @@
 const { Comment } = require("../../database.js");
 
 const deleteComment = async (id) => {
-  const comment = await Comment.findOne({ where: { id: id } });
-  if (comment) {
-    await comment.destroy({
-      where: {
-        id: id,
-      },
-    });
-    return true;
+  try {
+    const comment = await Comment.findOne({ where: { id: id } });
+    if (comment) {
+      await comment.destroy({
+        where: {
+          id: id,
+        },
+      });
+      return true;
+    }
+  } catch(err){
+    console.log(err);
+    return false;
   }
-  return false;
 };
 
 module.exports = deleteComment;
