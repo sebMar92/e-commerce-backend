@@ -38,10 +38,10 @@ router.get('', authToken, async function (req, res) {
 //modificar estado de orden (pasar de wishlist a carrito, de carrito a pendiente, de pendiente a terminado, etc)
 //modificar cantidad de la orden
 router.put('/:id', authToken, async function (req, res) {
-  const { status, amount, date } = req.query;
-  const { id } = req.params;
+  const { status, amount, date, purchaseId } = req.body;
+  const { id } = req.params; 
   if (status) {
-    const orderChanged = await changeOrderStatus(id, status, req.user.user, date);
+    const orderChanged = await changeOrderStatus(id, status, req.user.user, date,purchaseId);
     if (typeof orderChanged !== 'boolean') {
       return res.send(orderChanged);
     } else if (orderChanged) {
@@ -93,13 +93,14 @@ router.post('/bulk', authToken, async function (req, res) {
 });
 router.put('/bulk/:bulkId', authToken, async function (req, res) {
   const { status, date, purchaseId } = req.body;
+  console.log("bodyyy",req.body)
   const { bulkId } = req.params;
 
   const orderChanged = await changeBulkOrderStatus({
     bulkId: bulkId,
     status: status,
     date: date,
-    purchaseId: purchaseId,
+    purchaseId: purchaseId, 
   });
   if (typeof orderChanged !== 'boolean') {
     return res.send(orderChanged);

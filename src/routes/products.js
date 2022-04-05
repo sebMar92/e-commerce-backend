@@ -8,6 +8,7 @@ const { Sale } = require('../database.js');
 const createProduct = require('../controllers/products/createProduct.js');
 const authToken = require('./middlewares/authToken.js');
 const editProduct = require('../controllers/products/editProduct.js');
+const deleteProducts = require('../controllers/products/deleteProducts.js');
 
 router.get('', async function (req, res) {
   const { search, minPrice, maxPrice, freeShipping, categoryId, order, limit, offset } =
@@ -52,6 +53,16 @@ router.put('/:id', authToken, async (req, res) => {
   if (req.user.user.rol === 'admin') {
     const edited = editProduct(req.body, req.params.id);
     return res.send(edited);
+  } else {
+    return res.status(403).send({ error: "You don't have permision to do this." });
+  }
+});
+router.delete('/:id', authToken, async (req, res) => {
+  if (req.user.user.rol === 'admin') {
+    const deleted = deleteProducts(req.params.id);
+    if (deleted) {
+      return res.send({ msg: 'Product deleted' });
+    }
   } else {
     return res.status(403).send({ error: "You don't have permision to do this." });
   }
