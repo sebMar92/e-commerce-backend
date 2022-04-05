@@ -24,11 +24,11 @@ const getAllUser = async () => {
       }
       return arr;
     } else {
-      return { error: "users doesn't exist" };
+      return { error: "users don't exist" };
     }
   } catch (err) {
     console.log(err);
-    return { error: "users doesn't exist" };
+    return { error: "users don't exist" };
   }
 };
 module.exports = getAllUser;
