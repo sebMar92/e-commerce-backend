@@ -1,26 +1,31 @@
 const { Comment, User, Product } = require("../../database.js");
 
 const createAndAddComment = async (data, user) => {
-  const { content, rating, productId } = data;
-  const foundUser = await User.findOne({ where: { id: user.id } });
-  const foundProduct = await Product.findOne({ where: { id: productId } });
-  if (foundUser && foundProduct) {
-    const existingComment = await Comment.findOne({
-      where: { userId: user.id, productId: productId },
-    });
-    if (existingComment) {
-      return "there's already a comment on this product";
-    } else {
-      const newComment = await Comment.create({
-        content: content,
-        rating: rating.toString(),
+  try {
+
+    const { content, rating, productId } = data;
+    const foundUser = await User.findOne({ where: { id: user.id } });
+    const foundProduct = await Product.findOne({ where: { id: productId } });
+    if (foundUser && foundProduct) {
+      const existingComment = await Comment.findOne({
+        where: { userId: user.id, productId: productId },
       });
-      await foundUser.addComment(newComment);
-      await foundProduct.addComment(newComment);
-      return "comment created";
+      if (existingComment) {
+        return "there's already a comment on this product";
+      } else {
+        const newComment = await Comment.create({
+          content: content,
+          rating: rating.toString(),
+        });
+        await foundUser.addComment(newComment);
+        await foundProduct.addComment(newComment);
+        return "comment created";
+      }
     }
+  } catch(err){
+    console.log(err);
+    return {error: "user / product not found"};
   }
-  return "user / product not found";
 };
 
 module.exports = createAndAddComment;

@@ -6,29 +6,45 @@ const deleteComment = require('../controllers/comment/deleteComment.js');
 const getComments = require('../controllers/comment/getComments.js');
 
 router.post('', authToken, async function (req, res) {
-  const newComment = await createAndAddComment(req.body, req.user.user);
-  return res.send({ msg: newComment });
+  try {
+    const newComment = await createAndAddComment(req.body, req.user.user);
+    return res.send({ msg: newComment });
+  } catch(err){
+    console.log(err);
+  }
 });
 
 router.put('', authToken, async function (req, res) {
-  const didEdit = await editComment(req.body);
-  if (didEdit) {
-    return res.send({ msg: 'comment edited' });
+  try {
+    const didEdit = await editComment(req.body);
+    if (didEdit) {
+      return res.send({ msg: 'comment edited' });
+    }
+    return res.send({ error: "couldn't edit comment" });
+  } catch(err){
+    console.log(err);
   }
-  return res.send({ error: "couldn't edit comment" });
 });
 
 router.delete('', authToken, async function (req, res) {
-  const didDelete = await deleteComment(req.body.id);
-  if (didDelete) {
-    return res.send({ msg: 'comment deleted' });
+  try {
+    const didDelete = await deleteComment(req.body.id);
+    if (didDelete) {
+      return res.send({ msg: 'comment deleted' });
+    }
+    return res.send({ error: "couldn't delete comment" });
+  } catch(err){
+    console.log(err);
   }
-  return res.send({ error: "couldn't delete comment" });
 });
 
 router.get('', async function (req, res) {
-  const comments = await getComments(req.query.productId);
-  return res.send(comments);
+  try {
+    const comments = await getComments(req.query.productId);
+    return res.send(comments);
+  } catch(err){
+    console.log(err);
+  }
 });
 
 module.exports = router;
