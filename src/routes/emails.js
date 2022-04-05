@@ -4,22 +4,23 @@ require("dotenv").config();
 const { PASS } = process.env;
 
 router.post("", (req, res) => {
-  const { receivers, message, title, products, link, name, types } = req.body;
+  try {
+    const { receivers, message, title, products, link, name, types } = req.body;
 
-  var transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "techstore421@gmail.com",
-      pass: PASS,
-    },
-  });
-  let mailOptions = {};
-  if (types) {
-    mailOptions = {
-      from: "techstore421@gmail.com",
-      to: `${receivers}`,
-      subject: `${title}`,
-      html: `
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "techstore421@gmail.com",
+        pass: PASS,
+      },
+    });
+    let mailOptions = {};
+    if (types) {
+      mailOptions = {
+        from: "techstore421@gmail.com",
+        to: `${receivers}`,
+        subject: `${title}`,
+        html: `
     <html lang="en">
     <head>
       <meta charset="UTF-8">
@@ -41,13 +42,13 @@ router.post("", (req, res) => {
     </body>
     </html>
   `,
-    };
-  } else {
-    mailOptions = {
-      from: "techstore421@gmail.com",
-      to: `${receivers}`,
-      subject: `${title}`,
-      html: `
+      };
+    } else {
+      mailOptions = {
+        from: "techstore421@gmail.com",
+        to: `${receivers}`,
+        subject: `${title}`,
+        html: `
     <html lang="en">
         <head>
           <meta charset="UTF-8">
@@ -87,16 +88,19 @@ router.post("", (req, res) => {
       </html>
   
   `,
-    };
-  }
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
+      };
     }
-  });
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;
