@@ -122,9 +122,10 @@ router.get('/admin/bulk', authToken, async function (req, res) {
   const { status, userId } = req.query;
 
   const cart = await getAllBulkOrders(status, userId);
+
   if (cart) {
     return res.send(cart);
-  }
+  } 
   return res.send({ error: "couldn't find orders" });
 });
 module.exports = router;
