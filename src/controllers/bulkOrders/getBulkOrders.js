@@ -1,6 +1,6 @@
 const { Order, Product, Image, Bulkorder } = require('../../database.js');
 
-const getBulkOrders = async (user, status, userId) => {
+const getBulkOrders = async (user, status) => {
   try {
     const inStatusProducts = await Product.findAll({
       attributes: ['title', 'id', 'price', 'shippingCost', 'stock', 'description'],
@@ -19,7 +19,7 @@ const getBulkOrders = async (user, status, userId) => {
     });
     const simpleProducts = inStatusProducts.map((product) => product.toJSON());
     const inStatusBulks = await Bulkorder.findAll({
-      where: { status: status, userId: userId },
+      where: { status: status, userId: user.id },
     });
     if (inStatusBulks.length > 0) {
       const bulksWithProducts = await Promise.all(
