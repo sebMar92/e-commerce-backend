@@ -24,9 +24,9 @@ const loadMockData = async () => {
   for await (const o of orders) {
     await createOrder(o.status, o.amount, { id: o.userId }, o.productId);
   }
-  for await (const bo of bulkorders) {
+/*   for await (const bo of bulkorders) {
     await createBulkOrder(bo);
-  }
+  } */
   console.log('mock data loaded');
 };
 
