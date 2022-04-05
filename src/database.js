@@ -67,6 +67,7 @@ const {
   Newsletter,
   Token,
   Order,
+  Bulkorder,
 } = sequelize.models;
 
 // User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });
@@ -79,6 +80,10 @@ User.hasMany(Direction);
 
 User.hasMany(Order);
 Product.hasMany(Order);
+Bulkorder.hasMany(Order);
+Order.belongsTo(Bulkorder);
+User.hasMany(Bulkorder);
+Bulkorder.belongsTo(User);
 
 Category.belongsToMany(Product, { through: 'Category_Product' });
 Product.belongsToMany(Category, { through: 'Category_Product' });

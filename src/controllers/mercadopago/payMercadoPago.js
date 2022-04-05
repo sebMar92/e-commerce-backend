@@ -7,9 +7,9 @@ const payMercadoPago = (data) => {
     let preference = {
       items: [],
       back_urls: {
-        success: "http://localhost:3000/purchase",
-        failure: "http://localhost:3000/purchase",
-        pending: "http://localhost:3000/purchase",
+        success: "http://localhost:3000/purchase/success",
+        failure: "http://localhost:3000/purchase/failure",
+        pending: "http://localhost:3000/purchase/failure",
       },
       auto_return: "approved",
     };

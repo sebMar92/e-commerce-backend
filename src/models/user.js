@@ -1,8 +1,8 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "user",
+    'user',
     {
       firstName: {
         type: DataTypes.STRING,
@@ -14,13 +14,13 @@ module.exports = (sequelize) => {
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       profilePicture: {
         type: DataTypes.STRING,
         allowNull: false,
         defaultValue:
-          "https://cdn.pixabay.com/photo/2015/01/01/22/15/woman-586185_960_720.jpg",
+          'https://cdn.pixabay.com/photo/2015/01/01/22/15/woman-586185_960_720.jpg',
         validate: {
           isUrl: true,
         },
@@ -33,11 +33,16 @@ module.exports = (sequelize) => {
         },
       },
       rol: {
-        type: DataTypes.ENUM("guest", "user", "admin"),
+        type: DataTypes.ENUM('guest', 'user', 'admin'),
         allowNull: false,
-        defaultValue: "user",
+        defaultValue: 'user',
       },
       newsletterSubscription: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+        allowNull: false,
+      },
+      googleUser: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
         allowNull: false,
@@ -47,7 +52,7 @@ module.exports = (sequelize) => {
       indexes: [
         {
           unique: true,
-          fields: ["email"],
+          fields: ['email'],
         },
       ],
     }

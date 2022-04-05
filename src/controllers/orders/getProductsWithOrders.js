@@ -8,7 +8,13 @@ const getProductsWithOrders = async (user, status) => {
         model: Order,
         where: { userId: user.id, status: status },
         as: 'orders',
-        attributes: ['id', 'amount'],
+        attributes: [
+          'id',
+          'amount',
+          'localPurchaseDate',
+          'localDeliverDate',
+          'localCancelDate',
+        ],
       },
       {
         model: Image,

@@ -12,6 +12,7 @@ const editUser = async (data, id) => {
     email,
     newsletterSubscription,
     direction,
+    rol
   } = data;
   try {
     const foundUser = await User.findOne({
@@ -27,6 +28,7 @@ const editUser = async (data, id) => {
       }
       if (firstName) foundUser.firstName = firstName;
       if (lastName) foundUser.lastName = lastName;
+      if (rol) foundUser.rol = rol;
       if (hashedPassword) foundUser.password = hashedPassword;
       if (profilePicture) foundUser.profilePicture = profilePicture;
       if (email) foundUser.email = email;

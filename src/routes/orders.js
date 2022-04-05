@@ -1,4 +1,9 @@
 const router = require('express').Router();
+const changeBulkOrderStatus = require('../controllers/bulkOrders/changeBulkOrderStatus.js');
+const createBulkOrder = require('../controllers/bulkOrders/createBulkOrder.js');
+const deleteBulkOrder = require('../controllers/bulkOrders/deleteBulkOrder.js');
+const getAllBulkOrders = require('../controllers/bulkOrders/getAllBulkOrders.js');
+const getBulkOrders = require('../controllers/bulkOrders/getBulkOrders.js');
 const changeOrderAmount = require('../controllers/orders/changeOrderAmount.js');
 const changeOrderStatus = require('../controllers/orders/changeOrderStatus.js');
 const createOrder = require('../controllers/orders/createOrder.js');
@@ -23,19 +28,20 @@ router.get('', authToken, async function (req, res) {
   const user = req.user.user;
   const { status } = req.query;
 
-  const cart = await getProductsWithOrders(user, status);
+  const cart = await getProductsWithOrders(user, status, user.id);
   if (cart) {
     return res.send(cart);
   }
   return res.send({ error: "couldn't find orders" });
 });
+
 //modificar estado de orden (pasar de wishlist a carrito, de carrito a pendiente, de pendiente a terminado, etc)
 //modificar cantidad de la orden
 router.put('/:id', authToken, async function (req, res) {
-  const { status, amount } = req.query;
-  const { id } = req.params;
+  const { status, amount, date, purchaseId } = req.body;
+  const { id } = req.params; 
   if (status) {
-    const orderChanged = await changeOrderStatus(id, status);
+    const orderChanged = await changeOrderStatus(id, status, req.user.user, date,purchaseId);
     if (typeof orderChanged !== 'boolean') {
       return res.send(orderChanged);
     } else if (orderChanged) {
@@ -62,5 +68,63 @@ router.delete('/:id', authToken, async function (req, res) {
   }
   return res.send({ error: "couldn't find order" });
 });
+// trae las ordenes con el status pedido (para traer el carro de compras, la wishlist, historial, etc)
+router.get('/bulk', authToken, async function (req, res) {
+  const user = req.user.user;
+  const { status } = req.query;
 
+  const cart = await getBulkOrders(user, status);
+  if (cart) {
+    return res.send(cart);
+  }
+  return res.send({ error: "couldn't find orders" });
+});
+router.post('/bulk', authToken, async function (req, res) {
+  const { orderIds } = req.body;
+  const user = req.user.user;
+
+  const created = await createBulkOrder({ orderIds: orderIds, user: user });
+  if (typeof created !== 'boolean') {
+    return res.send(created);
+  } else if (created) {
+    return res.send({ msg: 'bulk order created' });
+  }
+  return res.send({ error: "couldn't create bulk order" });
+});
+router.put('/bulk/:bulkId', authToken, async function (req, res) {
+  const { status, date, purchaseId } = req.body;
+  console.log("bodyyy",req.body)
+  const { bulkId } = req.params;
+
+  const orderChanged = await changeBulkOrderStatus({
+    bulkId: bulkId,
+    status: status,
+    date: date,
+    purchaseId: purchaseId, 
+  });
+  if (typeof orderChanged !== 'boolean') {
+    return res.send(orderChanged);
+  } else if (orderChanged) {
+    return res.send({ msg: 'status changed' });
+  }
+  return res.send({ error: "couldn't edit bulk order" });
+});
+router.delete('/bulk/:bulkId', authToken, async function (req, res) {
+  const { bulkId } = req.params;
+
+  const orderDeleted = await deleteBulkOrder(bulkId);
+  if (orderDeleted) {
+    return res.send({ msg: 'bulkorder deleted' });
+  }
+  return res.send({ error: "couldn't find bulkorder" });
+});
+router.get('/admin/bulk', authToken, async function (req, res) {
+  const { status, userId } = req.query;
+
+  const cart = await getAllBulkOrders(status, userId);
+  if (cart) {
+    return res.send(cart);
+  }
+  return res.send({ error: "couldn't find orders" });
+});
 module.exports = router;
