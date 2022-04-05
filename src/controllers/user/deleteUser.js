@@ -13,7 +13,7 @@ const deleteUser = async (id) => {
     return false;
   } catch (err) {
     console.log(err);
-    return false;
-  } 
-};       
+    return false; 
+  }    
+};
 module.exports = deleteUser;
