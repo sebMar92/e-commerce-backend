@@ -1,13 +1,28 @@
 const { Order, Product, Image, Bulkorder } = require('../../database.js');
+const Sequelize = require('sequelize');
+const { where } = require('sequelize');
 
-const getBulkOrders = async (user, status, userId) => {
+const Op = Sequelize.Op;
+const getBulkOrders = async (user, status) => {
   try {
+    var whereStatement = {
+      where: {
+        status: {
+          [Op.or]: ['pending', 'finished', 'preparing', 'onDelivery'],
+        },
+        userId: user.id,
+      },
+    };
+    if (status) {
+      whereStatement.where.status = status;
+    }
+
     const inStatusProducts = await Product.findAll({
       attributes: ['title', 'id', 'price', 'shippingCost', 'stock', 'description'],
       include: [
         {
           model: Order,
-          where: { userId: user.id, status: status },
+          ...whereStatement,
           as: 'orders',
         },
         {
@@ -17,9 +32,11 @@ const getBulkOrders = async (user, status, userId) => {
         },
       ],
     });
+
     const simpleProducts = inStatusProducts.map((product) => product.toJSON());
+
     const inStatusBulks = await Bulkorder.findAll({
-      where: { status: status, userId: userId },
+      ...whereStatement,
     });
     if (inStatusBulks.length > 0) {
       const bulksWithProducts = await Promise.all(
@@ -31,12 +48,12 @@ const getBulkOrders = async (user, status, userId) => {
             const foundProduct = simpleProducts.find(
               (product) => product.id === order.productId
             );
-  
+
             let productWithOneOrder = foundProduct;
-            productWithOneOrder.orders = productWithOneOrder.orders.filter(
-              (ord) => ord.id == order.id
-            );
-            bulk.products.push(productWithOneOrder);
+            productWithOneOrder.orders = productWithOneOrder.orders.filter((ord) => {
+              if (ord.id == order.id) return ord;
+            });
+            await bulk.products.push(productWithOneOrder);
           }
           return await bulk;
         })
@@ -53,7 +70,7 @@ const getBulkOrders = async (user, status, userId) => {
       });
       return [...mappedProducts, ...bulksWithProducts];
     }
-  } catch(err){
+  } catch (err) {
     console.log(err);
     return false;
   }
