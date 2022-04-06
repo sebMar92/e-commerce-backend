@@ -3,7 +3,7 @@ const { Order, Product } = require('../../database.js');
 
 // app.post("/process-payment", (req, res) => {
 const payMercadoPago = (data) => {
-
+  try {
     let preference = {
       items: [],
       back_urls: {
@@ -21,5 +21,8 @@ const payMercadoPago = (data) => {
       });
     });
     return preference
+  } catch(err){
+    console.log(err);
+  }
 };
 module.exports = payMercadoPago;
