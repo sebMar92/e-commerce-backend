@@ -15,7 +15,7 @@ router.post('', authToken, async function (req, res) {
   try {
     const { status, amount, productId } = req.body;
     const user = req.user.user;
-  
+
     const created = await createOrder(status, amount, user, productId);
     if (typeof created !== 'boolean') {
       return res.send(created);
@@ -23,7 +23,7 @@ router.post('', authToken, async function (req, res) {
       return res.send({ msg: 'order created' });
     }
     return res.send({ error: "couldn't create order" });
-  }catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
@@ -32,13 +32,13 @@ router.get('', authToken, async function (req, res) {
   try {
     const user = req.user.user;
     const { status } = req.query;
-  
+
     const cart = await getProductsWithOrders(user, status, user.id);
     if (cart) {
       return res.send(cart);
     }
     return res.send({ error: "couldn't find orders" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
@@ -48,9 +48,15 @@ router.get('', authToken, async function (req, res) {
 router.put('/:id', authToken, async function (req, res) {
   try {
     const { status, amount, date, purchaseId } = req.body;
-    const { id } = req.params; 
+    const { id } = req.params;
     if (status) {
-      const orderChanged = await changeOrderStatus(id, status, req.user.user, date,purchaseId);
+      const orderChanged = await changeOrderStatus(
+        id,
+        status,
+        req.user.user,
+        date,
+        purchaseId
+      );
       if (typeof orderChanged !== 'boolean') {
         return res.send(orderChanged);
       } else if (orderChanged) {
@@ -64,9 +70,9 @@ router.put('/:id', authToken, async function (req, res) {
         return res.send({ msg: 'amount changed' });
       }
     }
-  
+
     return res.send({ error: "couldn't edit order" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
@@ -74,13 +80,13 @@ router.put('/:id', authToken, async function (req, res) {
 router.delete('/:id', authToken, async function (req, res) {
   try {
     const { id } = req.params;
-  
+
     const orderDeleted = await deleteOrder(id);
     if (orderDeleted) {
       return res.send({ msg: 'order deleted' });
     }
     return res.send({ error: "couldn't find order" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
@@ -89,13 +95,13 @@ router.get('/bulk', authToken, async function (req, res) {
   try {
     const user = req.user.user;
     const { status } = req.query;
-  
+
     const cart = await getBulkOrders(user, status);
     if (cart) {
       return res.send(cart);
     }
     return res.send({ error: "couldn't find orders" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
@@ -103,7 +109,7 @@ router.post('/bulk', authToken, async function (req, res) {
   try {
     const { orderIds } = req.body;
     const user = req.user.user;
-  
+
     const created = await createBulkOrder({ orderIds: orderIds, user: user });
     if (typeof created !== 'boolean') {
       return res.send(created);
@@ -111,21 +117,19 @@ router.post('/bulk', authToken, async function (req, res) {
       return res.send({ msg: 'bulk order created' });
     }
     return res.send({ error: "couldn't create bulk order" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
 router.put('/bulk/:bulkId', authToken, async function (req, res) {
   try {
     const { status, date, purchaseId } = req.body;
-    console.log("bodyyy",req.body)
     const { bulkId } = req.params;
-  
     const orderChanged = await changeBulkOrderStatus({
       bulkId: bulkId,
       status: status,
       date: date,
-      purchaseId: purchaseId, 
+      purchaseId: purchaseId,
     });
     if (typeof orderChanged !== 'boolean') {
       return res.send(orderChanged);
@@ -133,20 +137,20 @@ router.put('/bulk/:bulkId', authToken, async function (req, res) {
       return res.send({ msg: 'status changed' });
     }
     return res.send({ error: "couldn't edit bulk order" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
 router.delete('/bulk/:bulkId', authToken, async function (req, res) {
   try {
     const { bulkId } = req.params;
-  
+
     const orderDeleted = await deleteBulkOrder(bulkId);
     if (orderDeleted) {
       return res.send({ msg: 'bulkorder deleted' });
     }
     return res.send({ error: "couldn't find bulkorder" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });
@@ -154,13 +158,13 @@ router.delete('/bulk/:bulkId', authToken, async function (req, res) {
 router.get('/admin/bulk', authToken, async function (req, res) {
   try {
     const { status, userId } = req.query;
-  
+
     const cart = await getAllBulkOrders(status, userId);
     if (cart) {
       return res.send(cart);
     }
     return res.send({ error: "couldn't find orders" });
-  } catch(err){
+  } catch (err) {
     console.log(err);
   }
 });

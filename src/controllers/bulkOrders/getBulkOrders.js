@@ -35,6 +35,7 @@ const getBulkOrders = async (user, status) => {
     const simpleProducts = inStatusProducts.map((product) => product.toJSON());
 
     const inStatusBulks = await Bulkorder.findAll({
+      where: { status: status, userId: user.id },
       ...whereStatement,
     });
     if (inStatusBulks.length > 0) {
