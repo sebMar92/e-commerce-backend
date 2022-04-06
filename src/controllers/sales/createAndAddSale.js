@@ -12,15 +12,25 @@ const createAndAddSale = async (salesData) => {
       image,
       id,
     });
+    if (Array.isArray(category)) {
+      for await (cat of category) {
+        await newSale.addCategory(cat.id);
+      }
+    }
+    if (Array.isArray(product)) {
+      for (prod of product) {
+        await newSale.addProduct(prod.id);
+      }
+    }
     if (category === 0 && product === 0) {
       newSale.global = true;
-      newSale.save();
+      await newSale.save();
     }
     if (category > 0) {
-      newSale.addCategory(category);
+      await newSale.addCategory(category);
     }
     if (product > 0) {
-      newSale.addProduct(product);
+      await newSale.addProduct(product);
     }
     return true;
   } catch (err) {

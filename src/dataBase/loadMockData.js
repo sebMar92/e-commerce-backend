@@ -27,9 +27,9 @@ const loadMockData = async () => {
   for await (const o of orders) {
     await createOrder(o.status, o.amount, { id: o.userId }, o.productId);
   }
-/*   for await (const bo of bulkorders) {
+  for await (const bo of bulkorders) {
     await createBulkOrder(bo);
-  } */
+  } 
   /* const bulks = await Bulkorder.findAll();
   for await (const bulk of bulks) {
     changeBulkOrderStatus({
@@ -41,6 +41,7 @@ const loadMockData = async () => {
   }
   await changeOrderStatus(5, 'finished', { id: 1 }, Date(), '123idfalso'); */
 
+  
   console.log('mock data loaded');
 };
 
