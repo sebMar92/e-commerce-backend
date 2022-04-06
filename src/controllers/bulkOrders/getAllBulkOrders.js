@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 
 const Op = Sequelize.Op;
 
+
 const getAllBulkOrders = async (status, userId) => {
   try {
     var whereStatement = {

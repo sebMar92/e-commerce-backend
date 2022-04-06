@@ -124,9 +124,7 @@ router.post('/bulk', authToken, async function (req, res) {
 router.put('/bulk/:bulkId', authToken, async function (req, res) {
   try {
     const { status, date, purchaseId } = req.body;
-
     const { bulkId } = req.params;
-
     const orderChanged = await changeBulkOrderStatus({
       bulkId: bulkId,
       status: status,
