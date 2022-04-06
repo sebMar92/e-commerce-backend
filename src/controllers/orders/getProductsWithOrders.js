@@ -1,4 +1,4 @@
-const { Order, Product, Image } = require('../../database.js');
+const { Order, Product, Image, Sale, Category } = require('../../database.js');
 
 const getProductsWithOrders = async (user, status) => {
   try {
@@ -22,12 +22,36 @@ const getProductsWithOrders = async (user, status) => {
           as: 'images',
           attributes: ['url', 'altText'],
         },
+        {
+          model: Sale,
+          attributes: ['percentage', 'day', 'productAmount', 'id'],
+          through: {
+            attributes: [],
+          },
+        },
+        {
+          model: Category,
+          as: 'categories',
+          attributes: ['name', 'id'],
+          through: {
+            attributes: [],
+          },
+          include: [
+            {
+              model: Sale,
+              attributes: ['percentage', 'day', 'productAmount', 'id'],
+              through: {
+                attributes: [],
+              },
+            },
+          ],
+        },
       ],
     });
     if (inCartProducts.length > 0) {
       return inCartProducts;
     }
-  } catch(err){
+  } catch (err) {
     console.log(err);
     return false;
   }
