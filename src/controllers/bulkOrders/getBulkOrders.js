@@ -1,9 +1,7 @@
 const { Order, Product, Image, Bulkorder } = require('../../database.js');
 const Sequelize = require('sequelize');
-const { where } = require('sequelize');
 
 const Op = Sequelize.Op;
-
 const getBulkOrders = async (user, status) => {
   try {
     var whereStatement = {
@@ -37,9 +35,7 @@ const getBulkOrders = async (user, status) => {
     const simpleProducts = inStatusProducts.map((product) => product.toJSON());
 
     const inStatusBulks = await Bulkorder.findAll({
-
       ...whereStatement,
-
     });
     if (inStatusBulks.length > 0) {
       const bulksWithProducts = await Promise.all(
