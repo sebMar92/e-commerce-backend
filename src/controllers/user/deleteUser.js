@@ -14,6 +14,6 @@ const deleteUser = async (id) => {
   } catch (err) {
     console.log(err);
     return false; 
-  }    
+  }  
 };
 module.exports = deleteUser;

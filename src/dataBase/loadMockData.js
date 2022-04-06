@@ -9,6 +9,9 @@ const orders = require('./orders.json');
 const createOrder = require('../controllers/orders/createOrder');
 const bulkorders = require('./bulkorders.json');
 const createBulkOrder = require('../controllers/bulkOrders/createBulkOrder.js');
+const { Bulkorder} = require('../database.js');
+const changeBulkOrderStatus = require('../controllers/bulkOrders/changeBulkOrderStatus');
+const changeOrderStatus = require('../controllers/orders/changeOrderStatus');
 
 const loadMockData = async () => {
   console.log('loading mock data');
@@ -26,7 +29,19 @@ const loadMockData = async () => {
   }
   for await (const bo of bulkorders) {
     await createBulkOrder(bo);
+  } 
+  /* const bulks = await Bulkorder.findAll();
+  for await (const bulk of bulks) {
+    changeBulkOrderStatus({
+      bulkId: bulk.id,
+      status: 'finished',
+      date: Date(),
+      purchaseId: '123idfalso',
+    });
   }
+  await changeOrderStatus(5, 'finished', { id: 1 }, Date(), '123idfalso'); */
+
+  
   console.log('mock data loaded');
 };
 
