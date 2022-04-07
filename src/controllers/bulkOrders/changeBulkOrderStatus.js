@@ -6,6 +6,7 @@ const changeBulkOrderStatus = async (data) => {
   try {
     const foundBulk = await Bulkorder.findOne({ where: { id: bulkId } });
     const serverDate = Date();
+    if(foundBulk){
     foundBulk.status = status;
     if (status === 'finished') {
       foundBulk.purchaseId = purchaseId;
@@ -20,7 +21,9 @@ const changeBulkOrderStatus = async (data) => {
       foundBulk.localCancelDate = date;
       foundBulk.serverCancelDate = serverDate;
     }
+ 
     await foundBulk.save();
+ 
 
     const ordersInBulk = await Order.findAll({ where: { bulkorderId: bulkId } });
     for (const order of ordersInBulk) {
@@ -29,7 +32,8 @@ const changeBulkOrderStatus = async (data) => {
         return false;
       }
     }
-    return true;
+    return true; 
+  }return false;
   } catch (err) {
     console.log(err);
     return false;
