@@ -1,13 +1,22 @@
 const { Order, Product, Image, Sale, Category } = require('../../database.js');
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
+
 
 const getProductsWithOrders = async (user, status) => {
   try {
+    let whereStatement = {where:{userId: user.id}}
+    if(status.includes(",")){
+      whereStatement.where.status = {[Op.or] : status.split(",")}
+    }else{
+      whereStatement.where.status = status
+    }
     const inCartProducts = await Product.findAll({
       attributes: ['title', 'id', 'price', 'shippingCost', 'stock', 'description'],
       include: [
         {
           model: Order,
-          where: { userId: user.id, status: status },
+          ...whereStatement,
           as: 'orders',
           attributes: [
             'id',
