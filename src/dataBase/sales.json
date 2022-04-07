@@ -1,10 +1,10 @@
 [
   {
-    "description": "Everything is 10% off on Thursdays!",
+    "description": "Everything is 10% off on Fridays!",
     "percentage": 10,
-    "day": "thursday",
+    "day": "friday",
     "productAmount": 0,
-    "image": "https://www.freeiconspng.com/uploads/flying-stacks-money-hd-transparent-4.png",
+    "image": "https://media.istockphoto.com/vectors/money-rain-falling-dollars-denominations-raining-cash-banknotes-or-vector-id1046969174?b=1&k=20&m=1046969174&s=612x612&w=0&h=XCh5uo_EGvgNsnfxkcmG_UlzKhEQVOkph3sLkOPbZuA=",
     "category": 0,
     "product": 0
   },
@@ -27,9 +27,9 @@
     "product": 0
   },
   {
-    "description": "Surpirse sale, get 25% off if you buy this item today!",
-    "percentage": 25,
-    "day": "monday",
+    "description": "Surpirse sale, get 35% off if you buy this item today!",
+    "percentage": 35,
+    "day": "thursday",
     "image": "https://images.mediotiempo.com/_oPFx4vbfkYQRQdANL3Oi80c5eQ=/958x596/uploads/media/2021/05/13/hot-sale-epocas-mayores-descuentos_0_227_1200_746.jpg",
     "productAmount": 0,
     "category": 0,

@@ -4,7 +4,7 @@ const loadMockData = require('./src/dataBase/loadMockData.js');
 
 // Syncing all the models at once.
 conn
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     loadMockData();
   })
