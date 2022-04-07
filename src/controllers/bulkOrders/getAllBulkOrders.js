@@ -7,7 +7,7 @@ const Op = Sequelize.Op;
 const getAllBulkOrders = async (status, userId) => {
   try {
     var whereStatement = {
-      where: { status: { [Op.or]: ['finished', 'preparing', 'onDelivery'] } },
+      where: { status: { [Op.or]: ['finished', 'preparing', 'onDelivery','cancelled','delivered'] } },
     };
     if (status) {
       whereStatement.where.status = status;

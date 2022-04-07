@@ -1,8 +1,7 @@
-const { Comment, User, Product } = require("../../database.js");
+const { Comment, User, Product } = require('../../database.js');
 
 const createAndAddComment = async (data, user) => {
   try {
-
     const { content, rating, productId } = data;
     const foundUser = await User.findOne({ where: { id: user.id } });
     const foundProduct = await Product.findOne({ where: { id: productId } });
@@ -19,12 +18,12 @@ const createAndAddComment = async (data, user) => {
         });
         await foundUser.addComment(newComment);
         await foundProduct.addComment(newComment);
-        return "comment created";
+        return 'comment created';
       }
     }
-  } catch(err){
+  } catch (err) {
     console.log(err);
-    return {error: "user / product not found"};
+    return { error: 'user / product not found' };
   }
 };
 

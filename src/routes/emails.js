@@ -1,23 +1,23 @@
-const router = require("express").Router();
-var nodemailer = require("nodemailer");
-require("dotenv").config();
+const router = require('express').Router();
+var nodemailer = require('nodemailer');
+require('dotenv').config();
 const { PASS } = process.env;
 
-router.post("", (req, res) => {
+router.post('', (req, res) => {
   try {
     const { receivers, message, title, products, link, name, types } = req.body;
 
     var transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: 'gmail',
       auth: {
-        user: "techstore421@gmail.com",
+        user: 'techstore421@gmail.com',
         pass: PASS,
       },
     });
     let mailOptions = {};
     if (types) {
       mailOptions = {
-        from: "techstore421@gmail.com",
+        from: 'techstore421@gmail.com',
         to: `${receivers}`,
         subject: `${title}`,
         html: `
@@ -45,7 +45,7 @@ router.post("", (req, res) => {
       };
     } else {
       mailOptions = {
-        from: "techstore421@gmail.com",
+        from: 'techstore421@gmail.com',
         to: `${receivers}`,
         subject: `${title}`,
         html: `
@@ -95,7 +95,7 @@ router.post("", (req, res) => {
       if (error) {
         console.log(error);
       } else {
-        console.log("Email sent: " + info.response);
+        console.log('Email sent: ' + info.response);
       }
     });
   } catch (error) {
