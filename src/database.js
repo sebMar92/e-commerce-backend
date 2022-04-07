@@ -68,6 +68,7 @@ const {
   Token,
   Order,
   Bulkorder,
+  Networks
 } = sequelize.models;
 
 // User.belongsToMany(Product, { through: "Wishlist", as: "wishedProduct" });

@@ -11,6 +11,7 @@ const comments = require('./comments.js');
 const emails = require('./emails.js');
 const mercadopago = require('./mercadopago.js');
 const google = require('./google.js');
+const networks = require('./networks.js');
 const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/ruta', ruta);
@@ -24,5 +25,6 @@ router.use('/comment', comments);
 router.use('/emails', emails);
 router.use('/mercadopago', mercadopago);
 router.use('/google', google);
+router.use('/networks', networks);
 
 module.exports = router;
