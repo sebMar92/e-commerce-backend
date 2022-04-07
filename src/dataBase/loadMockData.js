@@ -29,7 +29,7 @@ const loadMockData = async () => {
   for await (const bo of bulkorders) {
     await createBulkOrder(bo);
   }
-  const bulks = await Bulkorder.findAll();
+  /* const bulks = await Bulkorder.findAll();
   for await (const bulk of bulks) {
     changeBulkOrderStatus({
       bulkId: bulk.id,
@@ -39,7 +39,7 @@ const loadMockData = async () => {
     });
   }
 
-  await changeOrderStatus(5, 'finished', { id: 1 }, Date(), '123idfalso');
+  await changeOrderStatus(5, 'finished', { id: 1 }, Date(), '123idfalso'); */
   console.log('mock data loaded');
 };
 
