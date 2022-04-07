@@ -98,7 +98,6 @@ router.delete('/token', async function (req, res) {
       return res.send({ msg: 'token not found' });
     }
     await Token.destroy({ where: { token: token } });
-    console.log('destroyed');
     return res.send({ msg: 'token deleted' });
   } catch (err) {
     console.log(err);
